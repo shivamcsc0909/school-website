@@ -60,6 +60,14 @@ export const translations = {
         featureSafe: "Safe Environment",
         featureSafeDesc: "CCTV surveillance, trained security staff, and a caring atmosphere for complete peace of mind.",
 
+        // Section Headers
+        academicExcellence: "Academic Excellence",
+        comprehensiveCurriculum: "Comprehensive Curriculum",
+        curriculumSubtitle: "CBSE-aligned curriculum with focus on practical application and conceptual understanding",
+        beyondAcademics: "Beyond Academics",
+        coCurricular: "Co-Curricular Activities",
+        coCurricularSubtitle: "Developing talents, building confidence, and nurturing creativity through diverse activities",
+
         // Subjects
         subjectEnglish: "English",
         subjectEnglishDesc: "Grammar, Literature & Communication",
@@ -221,6 +229,14 @@ export const translations = {
         featureCriticalDesc: "समस्या समाधान, तार्किक तर्क और विश्लेषणात्मक कौशल विकास पर जोर।",
         featureSafe: "सुरक्षित वातावरण",
         featureSafeDesc: "पूर्ण मानसिक शांति के लिए सीसीटीवी निगरानी, प्रशिक्षित सुरक्षा कर्मचारी और देखभाल करने वाला वातावरण।",
+
+        // Section Headers
+        academicExcellence: "शैक्षिक उत्कृष्टता",
+        comprehensiveCurriculum: "व्यापक पाठ्यक्रम",
+        curriculumSubtitle: "व्यावहारिक अनुप्रयोग और वैचारिक समझ पर ध्यान देने के साथ सीबीएसई-गठबंधन पाठ्यक्रम",
+        beyondAcademics: "अकादमिक से परे",
+        coCurricular: "सह-पाठ्यचर्या गतिविधियां",
+        coCurricularSubtitle: "विविध गतिविधियों के माध्यम से प्रतिभा का विकास, आत्मविश्वास बढ़ाना और रचनात्मकता का पोषण करना",
 
         // Subjects
         subjectEnglish: "अंग्रेज़ी",
