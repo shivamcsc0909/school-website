@@ -43,7 +43,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4" />
-                <span>Bhirbhanpur, Varanasi Uttar Pradesh Near Bheronath Mandir Varanasi Uttar Pradesh India - 221311 .</span>
+                <span>Bhirbhanpur, Varanasi Uttar Pradesh Near Bhairavnath Mandir Varanasi Uttar Pradesh India - 221311 .</span>
               </li>
             </ul>
           </div>
