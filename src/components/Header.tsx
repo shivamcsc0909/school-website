@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import AdmissionModal from './AdmissionModal';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -131,11 +132,12 @@ export default function Header() {
               </Button>
             </Link>
 
-            <Link to="/contact">
+            <AdmissionModal trigger={
               <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold ml-3 px-6 shadow-md hover:shadow-lg transition-all hidden lg:inline-flex">
                 {t('admissionEnquiry')}
               </Button>
-            </Link>
+            } />
+
             <Button
               variant="outline"
               className="ml-2 font-semibold border-blue-600 text-blue-600 hover:bg-blue-50 hover:text-blue-700"
@@ -161,7 +163,7 @@ export default function Header() {
               <Link key={item.path} to={item.path} onClick={() => setIsMenuOpen(false)}>
                 <Button
                   variant="ghost"
-                  className={`w-full justify-start font-medium ${isActive(item.path)
+                  className={`w-full justify-center font-medium ${isActive(item.path)
                     ? 'text-blue-600 bg-blue-50'
                     : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                     }`}
@@ -173,7 +175,7 @@ export default function Header() {
             <Link to="/timetable" onClick={() => setIsMenuOpen(false)}>
               <Button
                 variant="ghost"
-                className={`w-full justify-start font-medium ${isActive('/timetable')
+                className={`w-full justify-center font-medium ${isActive('/timetable')
                   ? 'text-blue-600 bg-blue-50'
                   : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                   }`}
@@ -183,35 +185,35 @@ export default function Header() {
             </Link>
 
             {/* Mobile Dropdown Items simply listed */}
-            <div className="pl-4 border-l-2 border-blue-100 ml-2">
-              <Link to="/events" onClick={() => setIsMenuOpen(false)}>
-                <Button
-                  variant="ghost"
-                  className={`w-full justify-start font-medium ${isActive('/events')
-                    ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
-                    }`}
-                >
-                  {t('events')}
-                </Button>
-              </Link>
-              <Link to="/gallery" onClick={() => setIsMenuOpen(false)}>
-                <Button
-                  variant="ghost"
-                  className={`w-full justify-start font-medium ${isActive('/gallery')
-                    ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
-                    }`}
-                >
-                  {t('gallery')}
-                </Button>
-              </Link>
-            </div>
+
+            <Link to="/events" onClick={() => setIsMenuOpen(false)}>
+              <Button
+                variant="ghost"
+                className={`w-full justify-center font-medium ${isActive('/events')
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                  }`}
+              >
+                {t('events')}
+              </Button>
+            </Link>
+            <Link to="/gallery" onClick={() => setIsMenuOpen(false)}>
+              <Button
+                variant="ghost"
+                className={`w-full justify-center font-medium ${isActive('/gallery')
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                  }`}
+              >
+                {t('gallery')}
+              </Button>
+            </Link>
+
 
             <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
               <Button
                 variant="ghost"
-                className={`w-full justify-start font-medium ${isActive('/contact')
+                className={`w-full justify-center font-medium ${isActive('/contact')
                   ? 'text-blue-600 bg-blue-50'
                   : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                   }`}
@@ -220,14 +222,15 @@ export default function Header() {
               </Button>
             </Link>
 
-            <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-              <Button className="w-full justify-start bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-2">
+            <AdmissionModal trigger={
+              <Button className="w-full justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-2">
                 {t('admissionEnquiry')}
               </Button>
-            </Link>
+            } />
+
             <Button
               variant="outline"
-              className="w-full justify-start font-semibold border-blue-600 text-blue-600 hover:bg-blue-50 hover:text-blue-700 mt-2"
+              className="w-full justify-center font-semibold border-blue-600 text-blue-600 hover:bg-blue-50 hover:text-blue-700 mt-2"
               onClick={() => {
                 setLanguage(language === 'en' ? 'hi' : 'en');
                 setIsMenuOpen(false);

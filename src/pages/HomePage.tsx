@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useNavigate } from "react-router-dom";
+import AdmissionModal from '@/components/AdmissionModal';
 
 import { BookOpen, Users, Award, Heart, ArrowRight, Star, Trophy, Lightbulb, Target, Sparkles, CheckCircle, GraduationCap, FlaskConical, Brain, Palette, Globe, Music, Drama, Dumbbell, Shield, TrendingUp, Video, Library, Microscope, Quote } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -233,14 +234,15 @@ export default function HomePage() {
                 </p>
 
                 <div className="flex flex-wrap gap-4 pt-4">
-                  <Button
-                    size="lg"
-                    variant="secondary"
-                    className="shadow-2xl hover:shadow-3xl transition-all hover:scale-105 text-lg px-8"
-                    onClick={() => navigate("/contact")}
-                  >
-                    {t('applyForAdmission')}
-                  </Button>
+                  <AdmissionModal trigger={
+                    <Button
+                      size="lg"
+                      variant="secondary"
+                      className="shadow-2xl hover:shadow-3xl transition-all hover:scale-105 text-lg px-8"
+                    >
+                      {t('applyForAdmission')}
+                    </Button>
+                  } />
 
                   <Button
                     size="lg"
@@ -307,10 +309,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-          <ArrowRight className="h-6 w-6 rotate-90" />
-        </div>
+
       </section>
 
       {/* Leadership Section - Director & Principal - OPTIMIZED FOR DESKTOP */}

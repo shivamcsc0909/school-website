@@ -41,7 +41,7 @@ export default function TimeTablePage() {
 
             <div className="container mx-auto px-4 py-12">
                 <Tabs defaultValue="kg1" className="w-full">
-                    <TabsList className="flex flex-wrap h-auto gap-2 bg-transparent justify-center mb-8">
+                    <TabsList className="grid grid-cols-3 md:grid-cols-4 lg:flex lg:flex-wrap lg:justify-center gap-2 h-auto bg-transparent mb-8">
                         {classes.map((cls) => (
                             <TabsTrigger
                                 key={cls.id}
