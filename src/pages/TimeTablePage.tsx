@@ -1,5 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Calendar, Clock, Smile, Star, Zap, Shield, Rocket, Heart } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -10,19 +10,6 @@ export default function TimeTablePage() {
         kg: "bg-gradient-to-br from-pink-100 to-purple-100 border-pink-200", // Doremon/Soft
         primary: "bg-gradient-to-br from-green-100 to-yellow-100 border-green-200", // Ben 10/Adventure
         middle: "bg-gradient-to-br from-blue-100 to-red-100 border-blue-200", // Superheroes
-    };
-
-    const timeSlots = [
-        "08:00 - 08:40", "08:40 - 09:20", "09:20 - 10:00", "10:00 - 10:40",
-        "10:40 - 11:10 (Break)",
-        "11:10 - 11:50", "11:50 - 12:30", "12:30 - 01:10", "01:10 - 01:50"
-    ];
-
-    const createSchedule = (subjects: string[]) => {
-        return timeSlots.map((time, index) => ({
-            time,
-            subject: time.includes("Break") ? "LUNCH BREAK" : subjects[index > 4 ? index - 1 : index] || "Activity"
-        }));
     };
 
     const classes = [
