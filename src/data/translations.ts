@@ -456,7 +456,7 @@ export const translations = {
         artCraft: "Art & Craft",
         physicalEducation: "Physical Education",
         computerBasics: "Computer Basics",
-        generalKnowledge: "General Knowledge",
+
 
         // Contact Form
         formChildName: "Child's Name",
@@ -513,7 +513,7 @@ export const translations = {
 
         // Gallery Item Titles
         smartClassroom: "Smart Classroom",
-        happyStudents: "Happy Students",
+
         scienceLabActivity: "Science Lab Activity",
         galleryComputerLab: "Computer Lab",
         groupLearning: "Group Learning",
@@ -549,6 +549,7 @@ export const translations = {
         // Stats
         yearsExcellence: "उत्कृष्टता के वर्ष",
         qualifiedTeachers: "योग्य शिक्षक",
+        qualifiedTeachersDesc: "बाल मनोविज्ञान और आधुनिक शिक्षण विधियों में विशेष प्रशिक्षण के साथ अत्यधिक अनुभवी संकाय।",
         studentsEnrolled: "नामांकित छात्र",
         classRooms: "कक्षाएं",
 
@@ -684,6 +685,11 @@ export const translations = {
 
 
         // Contact Page
+        contactTitle: "संपर्क करें",
+        contactSubtitle: "हमें आपसे सुनना अच्छा लगेगा। किसी भी प्रश्न के लिए हमसे संपर्क करें।",
+        visitUs: "हमसे मिलें",
+        callUs: "हमें कॉल करें",
+        schoolTiming: "स्कूल का समय",
         getInTouch: "संपर्क करें",
         getInTouchSubtitle: "प्रवेश, पूछताछ या किसी भी प्रश्न के लिए संपर्क करें",
         contactOfficeHours: "कार्यालय का समय",
@@ -770,7 +776,7 @@ export const translations = {
 
         // Events Page
         eventsTitle: "स्कूल के कार्यक्रम और गतिविधियां",
-        eventsSubtitle: "जश्न, प्रतियोगिताएं और विशेष क्षण",
+
         upcomingEvents: "आगामी कार्यक्रम",
         viewDetails: "विवरण देखें",
         pastEvents: "पिछले कार्यक्रम",
@@ -808,7 +814,7 @@ export const translations = {
         annualFunctionLocation: "मुख्य सभागार",
         scheduleAVisit: "मुलाकात का समय तय करें",
         yearsExperience: "वर्षों का अनुभव",
-        happyStudents: "खुश छात्र",
+
         expertTeachers: "विशेषज्ञ शिक्षक",
 
         // School Logo Card
@@ -850,7 +856,7 @@ export const translations = {
         featureSafeDesc: "पूर्ण मानसिक शांति के लिए सीसीटीवी निगरानी, प्रशिक्षित सुरक्षा कर्मचारी और देखभाल करने वाला वातावरण।",
 
         // Section Headers
-        academicExcellence: "शैक्षिक उत्कृष्टता",
+        // Section Headers
         comprehensiveCurriculum: "व्यापक पाठ्यक्रम",
         curriculumSubtitle: "व्यावहारिक अनुप्रयोग और वैचारिक समझ पर ध्यान देने के साथ सीबीएसई-गठबंधन पाठ्यक्रम",
         beyondAcademics: "अकादमिक से परे",
