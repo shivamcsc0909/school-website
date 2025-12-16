@@ -180,7 +180,6 @@ export default function TeachersPage() {
                   <div className="card-main-content">
                     {/* Centered Logo */}
                     <div className="logo-container">
-                      {/* Using a placeholder text if image fails or just as fallback/design */}
                       <img
                         src="https://i.postimg.cc/FsWq12tT/yoga-convent-school-logo.png"
                         alt="Logo"
@@ -191,7 +190,6 @@ export default function TeachersPage() {
                     {/* Bottom Details */}
                     <div className="teacher-details">
                       <div className="teacher-name-box">
-                        <h3 className="teacher-name">{(index % 2 === 0 ? "Teacher " : "") + "name"}</h3> {/* Placeholder logic just for structure display or keeping original name logic */}
                         <h3 className="teacher-name">{teacher.name}</h3>
                       </div>
                       <div className="teacher-role-box">
@@ -256,18 +254,20 @@ export default function TeachersPage() {
           width: 380px;
           height: 240px;
           background: white;
-          border: 1px solid #1f2937;
+          border: 2px solid #dc2626; /* Red border */
           position: relative;
           display: flex;
           flex-direction: row;
           padding: 0;
           box-shadow: none;
+          border-radius: 12px;
+          overflow: hidden;
           transition: transform 0.3s ease;
         }
 
         .visiting-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+          box-shadow: 0 10px 20px rgba(220, 38, 38, 0.15);
         }
 
         /* Main Content Area (Left side) */
@@ -282,31 +282,25 @@ export default function TeachersPage() {
         /* Center Logo */
         .logo-container {
           position: absolute;
-          top: 30px;
+          top: 25px;
           left: 50%;
           transform: translateX(-50%);
-          width: 100px;
-          height: 100px;
+          width: 90px;
+          height: 90px;
           border-radius: 50%;
-          border: 1px solid #1f2937;
+          border: 2px solid #dc2626;
           display: flex;
           align-items: center;
           justify-content: center;
           background: white;
           z-index: 10;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         .center-logo {
-          width: 90px;
-          height: 90px;
+          width: 70px;
+          height: 70px;
           object-fit: contain;
-          border-radius: 50%;
-        }
-
-        .logo-text {
-          font-size: 0.8rem;
-          font-weight: 500;
-          color: #374151;
         }
 
         /* Bottom Details */
@@ -316,60 +310,65 @@ export default function TeachersPage() {
         }
 
         .teacher-name-box {
-          border: 1px solid #1f2937;
+          border: 2px solid #dc2626;
           border-radius: 8px;
-          padding: 0.25rem 0.75rem;
+          padding: 0.5rem 1rem;
           margin-bottom: 0px;
           display: inline-block;
-          background: white;
+          background: #fef2f2; /* Light red tint */
           position: relative;
           z-index: 5;
           width: 100%;
+          text-align: center;
         }
 
         .teacher-name {
-          font-size: 1rem;
-          font-weight: 600;
-          color: #1f2937;
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: #991b1b;
           margin: 0;
           text-transform: capitalize;
         }
 
         .teacher-role-box {
-          border: 1px solid #1f2937;
+          border: 2px solid #dc2626;
           border-top: none;
           border-bottom-left-radius: 8px;
           border-bottom-right-radius: 8px;
-          padding: 0.2rem 0.75rem;
+          padding: 0.3rem 0.75rem;
           display: inline-block;
           background: white;
-          width: 85%;
-          margin-left: 0;
+          width: 90%;
+          margin: 0 auto;
+          display: block;
+          text-align: center;
         }
 
         .teacher-role {
-          font-size: 0.8rem;
-          color: #1f2937;
+          font-size: 0.85rem;
+          color: #dc2626;
           margin: 0;
-          font-weight: 500;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
         }
 
         /* Right Sidebar Pane */
         .card-sidebar {
           width: 50px;
-          border-left: 1px solid #1f2937;
+          border-left: 2px solid #dc2626;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: space-evenly;
           padding: 1rem 0;
-          background: white;
+          background: #fef2f2;
         }
 
         .sidebar-char {
-          font-size: 2rem;
-          font-weight: 400;
-          color: #000;
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #991b1b;
           line-height: 1;
         }
 
@@ -400,20 +399,20 @@ export default function TeachersPage() {
         /* Responsive */
         @media (max-width: 640px) {
           .visiting-card {
-            width: 320px;
+            width: 300px;
             height: 220px;
           }
           .logo-container {
-             width: 80px;
-             height: 80px;
+             width: 70px;
+             height: 70px;
              top: 20px;
           }
            .center-logo {
-             width: 70px;
-             height: 70px;
+             width: 55px;
+             height: 55px;
            }
            .sidebar-char {
-             font-size: 1.6rem;
+             font-size: 1.5rem;
            }
         }
       `}</style>

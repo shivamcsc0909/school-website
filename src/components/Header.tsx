@@ -40,7 +40,7 @@ export default function Header() {
               <h1 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                 Yoga Convent School
               </h1>
-              <p className="text-xs text-gray-600 font-medium">Birbhanpur, Varanasi</p>
+              <p className="text-sm font-medium text-gray-500">Bhairavnath, Varanasi</p>
             </div>
           </Link>
 

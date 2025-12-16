@@ -578,32 +578,32 @@ export default function HomePage() {
               </div>
 
               <div className="grid grid-cols-2 gap-6">
-                <Card className="bg-gradient-to-br from-blue-500 to-blue-600 text-white hover:shadow-2xl transition-all hover:scale-105">
-                  <CardContent className="p-8 text-center">
-                    <Library className="h-12 w-12 mx-auto mb-4" />
-                    <div className="text-4xl font-bold mb-2">5000</div>
-                    <div className="text-sm opacity-90">{t('booksInLib')}</div>
+                <Card className="bg-gradient-to-br from-blue-500 to-blue-600 border-none shadow-lg hover:shadow-2xl transition-all hover:scale-105">
+                  <CardContent className="p-6 md:p-8 text-center">
+                    <Library className="h-10 w-10 md:h-12 md:w-12 mx-auto mb-3 md:mb-4 text-white" />
+                    <div className="text-3xl md:text-4xl font-bold mb-2 text-white">5000</div>
+                    <div className="text-xs md:text-sm text-white/90 font-medium">{t('booksInLib')}</div>
                   </CardContent>
                 </Card>
-                <Card className="bg-gradient-to-br from-green-500 to-green-600 text-white hover:shadow-2xl transition-all hover:scale-105">
-                  <CardContent className="p-8 text-center">
-                    <Microscope className="h-12 w-12 mx-auto mb-4" />
-                    <div className="text-4xl font-bold mb-2">2</div>
-                    <div className="text-sm opacity-90">{t('scienceLabs')}</div>
+                <Card className="bg-gradient-to-br from-green-500 to-green-600 border-none shadow-lg hover:shadow-2xl transition-all hover:scale-105">
+                  <CardContent className="p-6 md:p-8 text-center">
+                    <Microscope className="h-10 w-10 md:h-12 md:w-12 mx-auto mb-3 md:mb-4 text-white" />
+                    <div className="text-3xl md:text-4xl font-bold mb-2 text-white">2</div>
+                    <div className="text-xs md:text-sm text-white/90 font-medium">{t('scienceLabs')}</div>
                   </CardContent>
                 </Card>
-                <Card className="bg-gradient-to-br from-purple-500 to-purple-600 text-white hover:shadow-2xl transition-all hover:scale-105">
-                  <CardContent className="p-8 text-center">
-                    <Video className="h-12 w-12 mx-auto mb-4" />
-                    <div className="text-4xl font-bold mb-2">15+</div>
-                    <div className="text-sm opacity-90">{t('smartClasses')}</div>
+                <Card className="bg-gradient-to-br from-purple-500 to-purple-600 border-none shadow-lg hover:shadow-2xl transition-all hover:scale-105">
+                  <CardContent className="p-6 md:p-8 text-center">
+                    <Video className="h-10 w-10 md:h-12 md:w-12 mx-auto mb-3 md:mb-4 text-white" />
+                    <div className="text-3xl md:text-4xl font-bold mb-2 text-white">15+</div>
+                    <div className="text-xs md:text-sm text-white/90 font-medium">{t('smartClasses')}</div>
                   </CardContent>
                 </Card>
-                <Card className="bg-gradient-to-br from-orange-500 to-orange-600 text-white hover:shadow-2xl transition-all hover:scale-105">
-                  <CardContent className="p-8 text-center">
-                    <Shield className="h-12 w-12 mx-auto mb-4" />
-                    <div className="text-4xl font-bold mb-2">24/7</div>
-                    <div className="text-sm opacity-90">{t('security')}</div>
+                <Card className="bg-gradient-to-br from-orange-500 to-orange-600 border-none shadow-lg hover:shadow-2xl transition-all hover:scale-105">
+                  <CardContent className="p-6 md:p-8 text-center">
+                    <Shield className="h-10 w-10 md:h-12 md:w-12 mx-auto mb-3 md:mb-4 text-white" />
+                    <div className="text-3xl md:text-4xl font-bold mb-2 text-white">24/7</div>
+                    <div className="text-xs md:text-sm text-white/90 font-medium">{t('security')}</div>
                   </CardContent>
                 </Card>
               </div>
