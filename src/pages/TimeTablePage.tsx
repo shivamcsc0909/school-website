@@ -96,6 +96,7 @@ export default function TimeTablePage() {
                                                     { time: "11:10 - 11:50", type: "period" },
                                                     { time: "11:50 - 12:30", type: "period" },
                                                     { time: "12:30 - 01:10", type: "period" },
+                                                    { time: "01:10 - 01:50", type: "period" },
                                                 ].map((slot, idx) => (
                                                     <tr key={idx}>
                                                         <td className="border-2 border-orange-200 bg-orange-50 p-3 text-xs font-bold text-center text-gray-600">
