@@ -1084,7 +1084,11 @@ export const translations = {
         scienceExhibition: "विज्ञान प्रदर्शनी",
         scienceExhibitionDesc: "एक अभिनव शोकेस जहां छात्र वर्किंग मॉडल, प्रयोग और अनुसंधान परियोजनाएं प्रस्तुत करते हैं।",
         scienceExhibitionBenefits: "वैज्ञानिक सोच, रचनात्मकता, समस्या समाधान कौशल और ज्ञान के व्यावहारिक अनुप्रयोग को प्रोत्साहित करता है।",
+        computerBasics: "कंप्यूटर बेसिक्स",
+        formChildName: "बच्चे का नाम",
+        formClass: "कक्षा जिसके लिए आवेदन कर रहे हैं",
     }
 };
 
 export type Language = 'en' | 'hi';
+export type TranslationKey = keyof typeof translations.en;
