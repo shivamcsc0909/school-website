@@ -7,12 +7,13 @@ export const translations = {
         teachers: "Teachers",
         gallery: "Gallery",
         events: "Events",
+        timetable: "Time Table",
         contact: "Contact",
         admissionEnquiry: "Admission Enquiry",
         toggleLanguage: "Switch to Hindi", // Button text when current is English (user asked for "Hindi" button)
 
         // Hero Section
-        admissionOpen: "Admission Open for 2025-26",
+        admissionOpen: "Admission Open for 2026-27",
         shapeYourChilds: "Shape Your Child's",
         brightFuture: "Bright Future",
         heroDescription: "Join Yoga Convent School — A trusted institution with 30+ years of excellence, offering quality education from Class 1 to 8. With a CBSE-based curriculum, experienced teachers, and a safe, nurturing environment, we help every child grow, learn, and achieve their best.",
@@ -158,7 +159,7 @@ export const translations = {
 
         // Enroll CTA
         enrollToday: "Enroll Your Child Today",
-        limitedSeats: "Limited Seats Available for Academic Year 2025-26",
+        limitedSeats: "Limited Seats Available for Academic Year 2026-27",
         enrollDesc: "Give your child the gift of quality education in a nurturing environment where they can discover their potential, develop their talents, and build a strong foundation for a successful future.",
         applyNow: "Apply for Admission Now",
         downloadProspectus: "Download Prospectus",
@@ -177,12 +178,13 @@ export const translations = {
         teachers: "शिक्षक",
         gallery: "गैलरी",
         events: "कार्यक्रम",
+        timetable: "समय सारिणी",
         contact: "संपर्क",
         admissionEnquiry: "प्रवेश पूछताछ",
         toggleLanguage: "Switch to English", // Button text when current is Hindi
 
         // Hero Section
-        admissionOpen: "2025-26 के लिए प्रवेश प्रारंभ",
+        admissionOpen: "2026-27 के लिए प्रवेश प्रारंभ",
         shapeYourChilds: "अपने बच्चे के",
         brightFuture: "उज्ज्वल भविष्य को आकार दें",
         heroDescription: "योग कॉन्वेंट स्कूल से जुड़ें — 30+ वर्षों की उत्कृष्टता वाला एक विश्वसनीय संस्थान, जो कक्षा 1 से 8 तक गुणवत्तापूर्ण शिक्षा प्रदान करता है। सीबीएसई आधारित पाठ्यक्रम, अनुभवी शिक्षकों और सुरक्षित, पोषण युक्त वातावरण के साथ, हम हर बच्चे को बढ़ने, सीखने और अपना सर्वश्रेष्ठ हासिल करने में मदद करते हैं।",
@@ -328,7 +330,7 @@ export const translations = {
 
         // Enroll CTA
         enrollToday: "आज ही अपने बच्चे का नामांकन करें",
-        limitedSeats: "शैक्षणिक वर्ष 2025-26 के लिए सीमित सीटें उपलब्ध",
+        limitedSeats: "शैक्षणिक वर्ष 2026-27 के लिए सीमित सीटें उपलब्ध",
         enrollDesc: "अपने बच्चे को एक पोषण वातावरण में गुणवत्तापूर्ण शिक्षा का उपहार दें जहां वे अपनी क्षमता की खोज कर सकें, अपनी प्रतिभा विकसित कर सकें और एक सफल भविष्य के लिए एक मजबूत नींव बना सकें।",
         applyNow: "प्रवेश के लिए अभी आवेदन करें",
         downloadProspectus: "विवरणिका डाउनलोड करें",

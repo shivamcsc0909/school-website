@@ -14,12 +14,13 @@ export default function Header() {
     { path: '/about', label: t('about') },
     { path: '/academics', label: t('academics') },
     { path: '/teachers', label: t('teachers') },
-    { path: '/gallery', label: t('gallery') },
-    { path: '/events', label: t('events') },
+    { path: '/timetable', label: t('timetable') }, // Added Time Table
+    // Events & Gallery are handled separately in the dropdown logic below
     { path: '/contact', label: t('contact') },
   ];
 
   const isActive = (path: string) => location.pathname === path;
+  const isEventsActive = location.pathname === '/events' || location.pathname === '/gallery';
 
   return (
     <header className="bg-white sticky top-0 z-50 border-b-2 border-blue-500 shadow-md">
@@ -45,11 +46,11 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
+            {navItems.slice(0, 4).map((item) => (
               <Link key={item.path} to={item.path}>
                 <Button
                   variant="ghost"
-                  className={`text-sm font-medium relative group/nav ${isActive(item.path)
+                  className={`text-sm font-medium relative group/nav hover:bg-blue-50 ${isActive(item.path)
                     ? 'text-blue-600'
                     : 'text-gray-700 hover:text-blue-600'
                     }`}
@@ -64,14 +65,80 @@ export default function Header() {
                 </Button>
               </Link>
             ))}
+
+            <Link to="/timetable">
+              <Button
+                variant="ghost"
+                className={`text-sm font-medium relative group/nav hover:bg-blue-50 ${isActive('/timetable')
+                  ? 'text-blue-600'
+                  : 'text-gray-700 hover:text-blue-600'
+                  }`}
+              >
+                {t('timetable')}
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-transform ${isActive('/timetable')
+                    ? 'scale-x-100'
+                    : 'scale-x-0 group-hover/nav:scale-x-100'
+                    }`}
+                ></span>
+              </Button>
+            </Link>
+
+            {/* Events Dropdown */}
+            <div className="relative group/dropdown">
+              <Button
+                variant="ghost"
+                className={`text-sm font-medium relative hover:bg-blue-50 ${isEventsActive
+                  ? 'text-blue-600'
+                  : 'text-gray-700 hover:text-blue-600'
+                  }`}
+              >
+                {t('events')}
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-transform ${isEventsActive
+                    ? 'scale-x-100'
+                    : 'scale-x-0 group-hover/dropdown:scale-x-100'
+                    }`}
+                ></span>
+              </Button>
+
+              {/* Dropdown Menu */}
+              <div className="absolute left-0 mt-0 w-48 bg-white border border-gray-100 rounded-md shadow-lg opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-200 transform translate-y-2 group-hover/dropdown:translate-y-0 z-50">
+                <Link to="/events" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-t-md">
+                  {t('events')}
+                </Link>
+                <Link to="/gallery" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-b-md">
+                  {t('gallery')}
+                </Link>
+              </div>
+            </div>
+
             <Link to="/contact">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold ml-3 px-6 shadow-md hover:shadow-lg transition-all">
+              <Button
+                variant="ghost"
+                className={`text-sm font-medium relative group/nav hover:bg-blue-50 ${isActive('/contact')
+                  ? 'text-blue-600'
+                  : 'text-gray-700 hover:text-blue-600'
+                  }`}
+              >
+                {t('contact')}
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-transform ${isActive('/contact')
+                    ? 'scale-x-100'
+                    : 'scale-x-0 group-hover/nav:scale-x-100'
+                    }`}
+                ></span>
+              </Button>
+            </Link>
+
+            <Link to="/contact">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold ml-3 px-6 shadow-md hover:shadow-lg transition-all hidden lg:inline-flex">
                 {t('admissionEnquiry')}
               </Button>
             </Link>
             <Button
               variant="outline"
-              className="ml-2 font-semibold border-blue-600 text-blue-600 hover:bg-blue-50"
+              className="ml-2 font-semibold border-blue-600 text-blue-600 hover:bg-blue-50 hover:text-blue-700"
               onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
             >
               {language === 'en' ? 'हिंदी' : 'English'}
@@ -90,7 +157,7 @@ export default function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden pb-4 flex flex-col gap-2 border-t pt-4 mt-2">
-            {navItems.map((item) => (
+            {navItems.slice(0, 4).map((item) => (
               <Link key={item.path} to={item.path} onClick={() => setIsMenuOpen(false)}>
                 <Button
                   variant="ghost"
@@ -103,13 +170,74 @@ export default function Header() {
                 </Button>
               </Link>
             ))}
+            <Link to="/timetable" onClick={() => setIsMenuOpen(false)}>
+              <Button
+                variant="ghost"
+                className={`w-full justify-start font-medium ${isActive('/timetable')
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                  }`}
+              >
+                {t('timetable')}
+              </Button>
+            </Link>
+
+            {/* Mobile Dropdown Items simply listed */}
+            <div className="pl-4 border-l-2 border-blue-100 ml-2">
+              <Link to="/events" onClick={() => setIsMenuOpen(false)}>
+                <Button
+                  variant="ghost"
+                  className={`w-full justify-start font-medium ${isActive('/events')
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    }`}
+                >
+                  {t('events')}
+                </Button>
+              </Link>
+              <Link to="/gallery" onClick={() => setIsMenuOpen(false)}>
+                <Button
+                  variant="ghost"
+                  className={`w-full justify-start font-medium ${isActive('/gallery')
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    }`}
+                >
+                  {t('gallery')}
+                </Button>
+              </Link>
+            </div>
+
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+              <Button
+                variant="ghost"
+                className={`w-full justify-start font-medium ${isActive('/contact')
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                  }`}
+              >
+                {t('contact')}
+              </Button>
+            </Link>
+
             <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
               <Button className="w-full justify-start bg-blue-600 hover:bg-blue-700 text-white font-semibold mt-2">
                 {t('admissionEnquiry')}
               </Button>
             </Link>
+            <Button
+              variant="outline"
+              className="w-full justify-start font-semibold border-blue-600 text-blue-600 hover:bg-blue-50 hover:text-blue-700 mt-2"
+              onClick={() => {
+                setLanguage(language === 'en' ? 'hi' : 'en');
+                setIsMenuOpen(false);
+              }}
+            >
+              {language === 'en' ? 'हिंदी' : 'English'}
+            </Button>
           </nav>
         )}
+
       </div>
     </header>
   );

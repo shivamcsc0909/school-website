@@ -274,7 +274,7 @@ export default function HomePage() {
                 <div className="relative">
                   {/* Glowing Card */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl rounded-3xl transform rotate-6"></div>
-                  <Card className="relative bg-white/95 backdrop-blur-xl border-2 border-white/50 shadow-2xl rounded-3xl overflow-hidden">
+                  <Card className="relative bg-fluid-water backdrop-blur-xl border-2 border-white/50 shadow-2xl rounded-3xl overflow-hidden">
                     <CardContent className="p-12 text-center">
                       <div className="relative inline-block">
                         <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
@@ -293,9 +293,9 @@ export default function HomePage() {
                           <div className="text-2xl font-bold text-primary">CBSE</div>
                           <div className="text-xs text-muted-foreground">{t('affiliated')}</div>
                         </div>
-                        <div className="bg-secondary/10 rounded-xl p-4">
-                          <GraduationCap className="h-8 w-8 text-secondary mx-auto mb-2" />
-                          <div className="text-2xl font-bold text-secondary">Class 1-8</div>
+                        <div className="bg-primary/5 rounded-xl p-4">
+                          <GraduationCap className="h-8 w-8 text-primary mx-auto mb-2" />
+                          <div className="text-2xl font-bold text-primary">Class 1-8</div>
                           <div className="text-xs text-muted-foreground">{t('allLevels')}</div>
                         </div>
                       </div>
@@ -463,7 +463,7 @@ export default function HomePage() {
       <section className="py-8 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <div className="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
               {t('academicExcellence')}
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('comprehensiveCurriculum')}</h2>
@@ -492,7 +492,7 @@ export default function HomePage() {
       <section className="py-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <div className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
               {t('beyondAcademics')}
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('coCurricular')}</h2>
@@ -689,7 +689,7 @@ export default function HomePage() {
       <section className="py-8 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <div className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
               {t('parentTestimonials')}
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('whatParentsSay')}</h2>
