@@ -270,7 +270,7 @@ export default function HomePage() {
               </div>
 
               {/* Right Content - School Logo Card */}
-              <div className="relative hidden lg:block">
+              <div className="relative">
                 <div className="relative">
                   {/* Glowing Card */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-xl rounded-3xl transform rotate-6"></div>
