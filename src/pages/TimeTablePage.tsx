@@ -13,16 +13,16 @@ export default function TimeTablePage() {
     };
 
     const classes = [
-        { id: "kg1", name: "KG 1", theme: themes.kg, icon: Smile, hero: "Doraemon Theme", subjects: ["English", "Hindi", "Maths", "Rhymes", "Drawing", "Games", "Story Time", "Pack Up"] },
-        { id: "kg2", name: "KG 2", theme: themes.kg, icon: Heart, hero: "Chota Bheem Theme", subjects: ["English", "Hindi", "Maths", "EVS", "Art", "Dance", "Games", "Pack Up"] },
-        { id: "1", name: "Class 1", theme: themes.primary, icon: Star, hero: "Tom & Jerry Theme", subjects: ["Maths", "English", "Hindi", "EVS", "Computer", "Library", "GK", "Games"] },
-        { id: "2", name: "Class 2", theme: themes.primary, icon: Zap, hero: "Ben 10 Theme", subjects: ["English", "Maths", "Hindi", "EVS", "Art", "Music", "Computer", "Sports"] },
-        { id: "3", name: "Class 3", theme: themes.primary, icon: Rocket, hero: "Motu Patlu Theme", subjects: ["Maths", "EVS", "English", "Hindi", "Computer", "GK", "Library", "Yoga"] },
-        { id: "4", name: "Class 4", theme: themes.middle, icon: Shield, hero: "Avengers Theme", subjects: ["Science", "Maths", "English", "Hindi", "Social", "Computer", "Art", "Games"] },
-        { id: "5", name: "Class 5", theme: themes.middle, icon: Shield, hero: "Spider-Man Theme", subjects: ["Maths", "Science", "Social", "English", "Hindi", "Sanskrit", "Computer", "Music"] },
-        { id: "6", name: "Class 6", theme: themes.middle, icon: Shield, hero: "Iron Man Theme", subjects: ["Science", "Maths", "Social", "English", "Hindi", "Sanskrit", "Computer", "Sports"] },
-        { id: "7", name: "Class 7", theme: themes.middle, icon: Shield, hero: "Batman Theme", subjects: ["Maths", "Science", "Social", "English", "Hindi", "Sanskrit", "Computer", "Library"] },
-        { id: "8", name: "Class 8", theme: themes.middle, icon: Shield, hero: "Transformers Theme", subjects: ["Science", "Maths", "Social", "English", "Hindi", "Sanskrit", "Computer", "Games"] },
+        { id: "kg1", name: "KG 1", theme: themes.kg, icon: Smile, hero: "Doraemon Theme", subjects: [t('subjectEnglish'), t('subjectHindi'), t('subjectMaths'), t('rhymes'), t('drawing'), t('games'), t('storyTime'), t('packUp')] },
+        { id: "kg2", name: "KG 2", theme: themes.kg, icon: Heart, hero: "Chota Bheem Theme", subjects: [t('subjectEnglish'), t('subjectHindi'), t('subjectMaths'), t('evsTeacher').split(' ')[0], t('activityArt'), t('activityMusic').split(' ')[0], t('games'), t('packUp')] },
+        { id: "1", name: "Class 1", theme: themes.primary, icon: Star, hero: "Tom & Jerry Theme", subjects: [t('subjectMaths'), t('subjectEnglish'), t('subjectHindi'), t('evsTeacher').split(' ')[0], t('subjectComputer'), t('libraryTime'), t('gk'), t('games')] },
+        { id: "2", name: "Class 2", theme: themes.primary, icon: Zap, hero: "Ben 10 Theme", subjects: [t('subjectEnglish'), t('subjectMaths'), t('subjectHindi'), t('evsTeacher').split(' ')[0], t('activityArt'), t('activityMusic').split(' ')[0], t('subjectComputer'), t('activitySports').split(' ')[0]] },
+        { id: "3", name: "Class 3", theme: themes.primary, icon: Rocket, hero: "Motu Patlu Theme", subjects: [t('subjectMaths'), t('evsTeacher').split(' ')[0], t('subjectEnglish'), t('subjectHindi'), t('subjectComputer'), t('gk'), t('libraryTime'), t('yoga')] },
+        { id: "4", name: "Class 4", theme: themes.middle, icon: Shield, hero: "Avengers Theme", subjects: [t('subjectScience'), t('subjectMaths'), t('subjectEnglish'), t('subjectHindi'), t('subjectSocial'), t('subjectComputer'), t('activityArt'), t('games')] },
+        { id: "5", name: "Class 5", theme: themes.middle, icon: Shield, hero: "Spider-Man Theme", subjects: [t('subjectMaths'), t('subjectScience'), t('subjectSocial'), t('subjectEnglish'), t('subjectHindi'), t('sanskrit'), t('subjectComputer'), t('activityMusic').split(' ')[0]] },
+        { id: "6", name: "Class 6", theme: themes.middle, icon: Shield, hero: "Iron Man Theme", subjects: [t('subjectScience'), t('subjectMaths'), t('subjectSocial'), t('subjectEnglish'), t('subjectHindi'), t('sanskrit'), t('subjectComputer'), t('activitySports').split(' ')[0]] },
+        { id: "7", name: "Class 7", theme: themes.middle, icon: Shield, hero: "Batman Theme", subjects: [t('subjectMaths'), t('subjectScience'), t('subjectSocial'), t('subjectEnglish'), t('subjectHindi'), t('sanskrit'), t('subjectComputer'), t('libraryTime')] },
+        { id: "8", name: "Class 8", theme: themes.middle, icon: Shield, hero: "Transformers Theme", subjects: [t('subjectScience'), t('subjectMaths'), t('subjectSocial'), t('subjectEnglish'), t('subjectHindi'), t('sanskrit'), t('subjectComputer'), t('games')] },
     ];
 
     return (
@@ -35,7 +35,7 @@ export default function TimeTablePage() {
                 </div>
                 <div className="container mx-auto px-4 text-center relative z-10">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4">{t('timetable')}</h1>
-                    <p className="text-xl opacity-90">Class-wise Weekly Schedules (2026-27)</p>
+                    <p className="text-xl opacity-90">{t('weeklySchedules')}</p>
                 </div>
             </section>
 
@@ -61,10 +61,10 @@ export default function TimeTablePage() {
                                         <cls.icon className="w-12 h-12 text-gray-700 p-2 bg-white rounded-full shadow-md" />
                                     </div>
                                     <div className="font-handwriting text-center">
-                                        <h2 className="text-4xl font-bold text-gray-800 tracking-wide uppercase mb-2" style={{ fontFamily: '"Comic Sans MS", "Chalkboard SE", sans-serif' }}>School Timetable</h2>
+                                        <h2 className="text-4xl font-bold text-gray-800 tracking-wide uppercase mb-2" style={{ fontFamily: '"Comic Sans MS", "Chalkboard SE", sans-serif' }}>{t('schoolTimetable')}</h2>
                                         <div className="flex justify-center gap-8 text-lg font-semibold text-gray-700 mt-4">
-                                            <div className="border-b-2 border-gray-400 min-w-[150px] text-center">Name: Student</div>
-                                            <div className="border-b-2 border-gray-400 min-w-[150px] text-center">Class: {cls.name}</div>
+                                            <div className="border-b-2 border-gray-400 min-w-[150px] text-center">{t('studentName')}</div>
+                                            <div className="border-b-2 border-gray-400 min-w-[150px] text-center">{t('className')}: {cls.name}</div>
                                         </div>
                                     </div>
                                 </CardHeader>
@@ -75,11 +75,11 @@ export default function TimeTablePage() {
                                                 <tr>
                                                     {/* Diagonal Header Simulation */}
                                                     <th className="border-2 border-orange-200 bg-orange-100 p-2 w-32 relative h-16">
-                                                        <span className="absolute bottom-1 left-2 text-xs font-bold text-orange-800">TIME</span>
-                                                        <span className="absolute top-1 right-2 text-xs font-bold text-orange-800">DAY</span>
+                                                        <span className="absolute bottom-1 left-2 text-xs font-bold text-orange-800">{t('timeHeader')}</span>
+                                                        <span className="absolute top-1 right-2 text-xs font-bold text-orange-800">{t('dayHeader')}</span>
                                                         <div className="absolute inset-0 border-t-2 border-orange-200 transform rotate-12 origin-top-left w-[120%] -ml-1"></div>
                                                     </th>
-                                                    {["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"].map((day) => (
+                                                    {[t('monday'), t('tuesday'), t('wednesday'), t('thursday'), t('friday'), t('saturday')].map((day) => (
                                                         <th key={day} className="border-2 border-orange-200 bg-white text-orange-800 p-2 text-sm font-bold w-1/6">
                                                             {day}
                                                         </th>
@@ -92,7 +92,7 @@ export default function TimeTablePage() {
                                                     { time: "08:40 - 09:20", type: "period" },
                                                     { time: "09:20 - 10:00", type: "period" },
                                                     { time: "10:00 - 10:40", type: "period" },
-                                                    { time: "10:40 - 11:10", type: "break", label: "BREAK" },
+                                                    { time: "10:40 - 11:10", type: "break", label: t('break') },
                                                     { time: "11:10 - 11:50", type: "period" },
                                                     { time: "11:50 - 12:30", type: "period" },
                                                     { time: "12:30 - 01:10", type: "period" },

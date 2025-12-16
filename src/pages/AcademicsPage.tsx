@@ -1,79 +1,82 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { BookOpen, GraduationCap, Users, Target } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AcademicsPage() {
+  const { t } = useLanguage();
+
   const classes = [
     {
-      grade: 'Class 1',
-      focus: 'Foundation Building',
-      subjects: ['English', 'Hindi', 'Mathematics', 'EVS', 'Art & Craft', 'Physical Education'],
-      description: 'Introduction to basic concepts with play-based learning and activity-oriented teaching methods.',
+      grade: t('class1'),
+      focus: t('foundationBuilding'),
+      subjects: [t('english'), t('hindi'), t('mathematics'), t('evs'), t('artCraft'), t('physicalEducation')],
+      description: t('class1Desc'),
     },
     {
-      grade: 'Class 2',
-      focus: 'Skill Development',
-      subjects: ['English', 'Hindi', 'Mathematics', 'EVS', 'Art & Craft', 'Physical Education', 'Computer Basics'],
-      description: 'Building upon foundational skills with enhanced reading, writing, and numerical abilities.',
+      grade: t('class2'),
+      focus: t('skillDevelopment'),
+      subjects: [t('english'), t('hindi'), t('mathematics'), t('evs'), t('artCraft'), t('physicalEducation'), t('computerBasics')],
+      description: t('class2Desc'),
     },
     {
-      grade: 'Class 3',
-      focus: 'Conceptual Learning',
-      subjects: ['English', 'Hindi', 'Mathematics', 'EVS', 'General Knowledge', 'Art', 'Computer', 'Physical Education'],
-      description: 'Developing conceptual understanding and critical thinking through interactive learning.',
+      grade: t('class3'),
+      focus: t('conceptualLearning'),
+      subjects: [t('english'), t('hindi'), t('mathematics'), t('evs'), t('generalKnowledge'), t('art'), t('computer'), t('physicalEducation')],
+      description: t('class3Desc'),
     },
     {
-      grade: 'Class 4',
-      focus: 'Knowledge Expansion',
-      subjects: ['English', 'Hindi', 'Mathematics', 'EVS', 'General Knowledge', 'Computer Science', 'Art', 'Physical Education'],
-      description: 'Expanding knowledge base with emphasis on comprehension and analytical skills.',
+      grade: t('class4'),
+      focus: t('knowledgeExpansion'),
+      subjects: [t('english'), t('hindi'), t('mathematics'), t('evs'), t('generalKnowledge'), t('computerScience'), t('art'), t('physicalEducation')],
+      description: t('class4Desc'),
     },
     {
-      grade: 'Class 5',
-      focus: 'Advanced Foundation',
-      subjects: ['English', 'Hindi', 'Mathematics', 'Science', 'Social Studies', 'Computer Science', 'Art', 'Physical Education'],
-      description: 'Preparing students for middle school with advanced concepts and independent learning.',
+      grade: t('class5'),
+      focus: t('advancedFoundation'),
+      subjects: [t('english'), t('hindi'), t('mathematics'), t('science'), t('socialStudies'), t('computerScience'), t('art'), t('physicalEducation')],
+      description: t('class5Desc'),
     },
     {
-      grade: 'Class 6',
-      focus: 'Middle School Transition',
-      subjects: ['English', 'Hindi', 'Mathematics', 'Science', 'Social Science', 'Computer Science', 'Art', 'Physical Education'],
-      description: 'Introduction to specialized subjects with focus on scientific thinking and social awareness.',
+      grade: t('class6'),
+      focus: t('middleSchoolTransition'),
+      subjects: [t('english'), t('hindi'), t('mathematics'), t('science'), t('socialScience'), t('computerScience'), t('art'), t('physicalEducation')],
+      description: t('class6Desc'),
     },
     {
-      grade: 'Class 7',
-      focus: 'Comprehensive Learning',
-      subjects: ['English', 'Hindi', 'Mathematics', 'Science', 'Social Science', 'Computer Science', 'Art', 'Physical Education'],
-      description: 'In-depth study of subjects with practical applications and project-based learning.',
+      grade: t('class7'),
+      focus: t('comprehensiveLearning'),
+      subjects: [t('english'), t('hindi'), t('mathematics'), t('science'), t('socialScience'), t('computerScience'), t('art'), t('physicalEducation')],
+      description: t('class7Desc'),
     },
     {
-      grade: 'Class 8',
-      focus: 'Pre-Secondary Preparation',
-      subjects: ['English', 'Hindi', 'Mathematics', 'Science', 'Social Science', 'Computer Science', 'Art', 'Physical Education'],
-      description: 'Comprehensive preparation for board examinations and higher secondary education.',
+      grade: t('class8'),
+      focus: t('preSecondaryPreparation'),
+      subjects: [t('english'), t('hindi'), t('mathematics'), t('science'), t('socialScience'), t('computerScience'), t('art'), t('physicalEducation')],
+      description: t('class8Desc'),
     },
   ];
 
   const features = [
     {
       icon: BookOpen,
-      title: 'Modern Curriculum',
-      description: 'Following updated CBSE curriculum with focus on conceptual understanding and practical application.',
+      title: t('modernCurriculum'),
+      description: t('modernCurriculumDesc'),
     },
     {
       icon: GraduationCap,
-      title: 'Qualified Teachers',
-      description: 'Highly experienced faculty with specialized training in child psychology and modern teaching methods.',
+      title: t('qualifiedTeachers'),
+      description: t('qualifiedTeachersDesc'),
     },
     {
       icon: Users,
-      title: 'Small Class Size',
-      description: 'Maintaining optimal student-teacher ratio for personalized attention and better learning outcomes.',
+      title: t('smallClassSize'),
+      description: t('smallClassSizeDesc'),
     },
     {
       icon: Target,
-      title: 'Individual Focus',
-      description: 'Adapting teaching style according to each student\'s learning level and pace for maximum growth.',
+      title: t('individualFocus'),
+      description: t('individualFocusDesc'),
     },
   ];
 
@@ -84,10 +87,10 @@ export default function AcademicsPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              Academic Programs
+              {t('academicPrograms')}
             </h1>
             <p className="text-xl md:text-2xl font-light opacity-95 max-w-2xl mx-auto">
-              Excellence in Education from Class 1 to Class 8
+              {t('academicSubtitle')}
             </p>
           </div>
         </div>
@@ -100,7 +103,7 @@ export default function AcademicsPage() {
             {/* Header */}
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Our Academic Approach
+                {t('ourAcademicApproach')}
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-[#d50004] to-[#00aade] mx-auto rounded-full"></div>
             </div>
@@ -109,10 +112,10 @@ export default function AcademicsPage() {
             <div className="max-w-4xl mx-auto mb-20">
               <div className="space-y-8 text-center">
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  At Yoga Convent School, we provide strong education and advanced knowledge through child-friendly learning methods. Our curriculum is designed to develop critical thinking, creativity, and problem-solving skills in students.
+                  {t('academicApproachDesc1')}
                 </p>
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  We have the best education environment for students where learning becomes an enjoyable experience. Our highly experienced teachers adapt their teaching style according to students' learning levels, ensuring every child reaches their full potential.
+                  {t('academicApproachDesc2')}
                 </p>
               </div>
             </div>
@@ -120,8 +123,8 @@ export default function AcademicsPage() {
             {/* Features Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="text-center border-2 hover:shadow-xl hover:border-[#00aade]/30 transition-all duration-300 hover:-translate-y-1"
                 >
                   <CardContent className="pt-10 pb-8 px-6">
@@ -146,19 +149,19 @@ export default function AcademicsPage() {
           {/* Header */}
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Class-wise Curriculum
+              {t('classWiseCurriculum')}
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[#d50004] to-[#00aade] mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive curriculum designed for each grade level
+              {t('classWiseSubtitle')}
             </p>
           </div>
 
           {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {classes.map((classInfo, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="border-2 hover:shadow-xl hover:border-[#00aade]/30 transition-all duration-300 hover:-translate-y-1"
               >
                 <CardHeader className="pb-6 space-y-4 bg-gradient-to-br from-[#d50004]/5 to-[#00aade]/5">
@@ -178,13 +181,13 @@ export default function AcademicsPage() {
                   <div>
                     <h4 className="font-bold mb-4 text-base flex items-center gap-2 text-gray-900">
                       <BookOpen className="w-4 h-4 text-[#d50004]" />
-                      Subjects Offered
+                      {t('subjectsOffered')}
                     </h4>
                     <div className="flex flex-wrap gap-2.5">
                       {classInfo.subjects.map((subject, idx) => (
-                        <Badge 
-                          key={idx} 
-                          variant="outline" 
+                        <Badge
+                          key={idx}
+                          variant="outline"
                           className="text-sm px-3 py-1.5 border-2 border-[#00aade]/30 text-gray-700 hover:bg-[#00aade]/10 hover:border-[#00aade]"
                         >
                           {subject}
@@ -206,7 +209,7 @@ export default function AcademicsPage() {
             {/* Header */}
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Our Teaching Methodology
+                {t('teachingMethodology')}
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-[#d50004] to-[#00aade] mx-auto rounded-full"></div>
             </div>
@@ -216,10 +219,10 @@ export default function AcademicsPage() {
               <Card className="border-2 border-[#d50004]/20 hover:shadow-lg hover:border-[#d50004]/40 transition-all">
                 <CardContent className="p-10">
                   <h3 className="text-2xl font-bold mb-5 text-[#d50004]">
-                    Interactive Learning
+                    {t('interactiveLearning')}
                   </h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    We use interactive teaching methods that engage students actively in the learning process. Our classrooms are equipped with smart boards and audio-visual aids that make learning more interesting and effective.
+                    {t('interactiveLearningDesc')}
                   </p>
                 </CardContent>
               </Card>
@@ -227,10 +230,10 @@ export default function AcademicsPage() {
               <Card className="border-2 border-[#00aade]/20 hover:shadow-lg hover:border-[#00aade]/40 transition-all">
                 <CardContent className="p-10">
                   <h3 className="text-2xl font-bold mb-5 text-[#00aade]">
-                    Personalized Attention
+                    {t('personalizedAttention')}
                   </h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    Understanding that every child learns differently, we adapt our teaching style according to students' learning levels. Our teachers provide individual attention to ensure no student is left behind.
+                    {t('personalizedAttentionDesc')}
                   </p>
                 </CardContent>
               </Card>
@@ -238,10 +241,10 @@ export default function AcademicsPage() {
               <Card className="border-2 border-[#d50004]/20 hover:shadow-lg hover:border-[#d50004]/40 transition-all">
                 <CardContent className="p-10">
                   <h3 className="text-2xl font-bold mb-5 text-[#d50004]">
-                    Practical Application
+                    {t('practicalApplication')}
                   </h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    We emphasize hands-on learning through experiments, projects, and real-world applications. This approach helps students understand concepts better and retain knowledge longer.
+                    {t('practicalApplicationDesc')}
                   </p>
                 </CardContent>
               </Card>
@@ -249,10 +252,10 @@ export default function AcademicsPage() {
               <Card className="border-2 border-[#00aade]/20 hover:shadow-lg hover:border-[#00aade]/40 transition-all">
                 <CardContent className="p-10">
                   <h3 className="text-2xl font-bold mb-5 text-[#00aade]">
-                    Continuous Assessment
+                    {t('continuousAssessment')}
                   </h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    Regular assessments and feedback help us track each student's progress and identify areas that need improvement. We conduct periodic tests, assignments, and projects to evaluate learning outcomes.
+                    {t('continuousAssessmentDesc')}
                   </p>
                 </CardContent>
               </Card>
@@ -260,10 +263,10 @@ export default function AcademicsPage() {
               <Card className="border-2 border-[#d50004]/20 hover:shadow-lg hover:border-[#d50004]/40 transition-all">
                 <CardContent className="p-10">
                   <h3 className="text-2xl font-bold mb-5 text-[#d50004]">
-                    Co-Curricular Integration
+                    {t('coCurricularIntegration')}
                   </h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    We also conduct various co-curricular activities that complement academic learning. Sports, arts, music, and cultural programs help in overall personality development of students.
+                    {t('coCurricularIntegrationDesc')}
                   </p>
                 </CardContent>
               </Card>
@@ -278,7 +281,7 @@ export default function AcademicsPage() {
           {/* Header */}
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Additional Learning Programs
+              {t('additionalLearningPrograms')}
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[#d50004] to-[#00aade] mx-auto rounded-full"></div>
           </div>
@@ -288,12 +291,12 @@ export default function AcademicsPage() {
             <Card className="border-2 border-[#d50004]/20 hover:shadow-xl hover:border-[#d50004]/40 transition-all duration-300 hover:-translate-y-1">
               <CardHeader className="pb-6 bg-gradient-to-br from-[#d50004]/5 to-transparent">
                 <CardTitle className="text-2xl font-bold text-[#d50004]">
-                  Remedial Classes
+                  {t('remedialClasses')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="pb-8">
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  Extra support for students who need additional help in specific subjects to ensure they keep pace with their peers.
+                  {t('remedialClassesDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -301,12 +304,12 @@ export default function AcademicsPage() {
             <Card className="border-2 border-[#00aade]/20 hover:shadow-xl hover:border-[#00aade]/40 transition-all duration-300 hover:-translate-y-1">
               <CardHeader className="pb-6 bg-gradient-to-br from-[#00aade]/5 to-transparent">
                 <CardTitle className="text-2xl font-bold text-[#00aade]">
-                  Advanced Learning
+                  {t('advancedLearning')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="pb-8">
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  Enrichment programs for students who excel, providing them with challenging material to further develop their abilities.
+                  {t('advancedLearningDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -314,12 +317,12 @@ export default function AcademicsPage() {
             <Card className="border-2 border-[#d50004]/20 hover:shadow-xl hover:border-[#d50004]/40 transition-all duration-300 hover:-translate-y-1">
               <CardHeader className="pb-6 bg-gradient-to-br from-[#d50004]/5 to-transparent">
                 <CardTitle className="text-2xl font-bold text-[#d50004]">
-                  Life Skills Education
+                  {t('lifeSkillsEducation')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="pb-8">
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  Teaching essential life skills including communication, problem-solving, decision-making, and emotional intelligence.
+                  {t('lifeSkillsEducationDesc')}
                 </p>
               </CardContent>
             </Card>

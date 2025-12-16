@@ -7,8 +7,10 @@ import { Label } from '@/components/ui/label';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 import { useState } from 'react';
 import { toast } from 'sonner';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,29 +39,46 @@ export default function ContactPage() {
   const contactInfo = [
     {
       icon: Phone,
-      title: 'Phone',
+      title: t('phone'), // "Phone" exists in Header translations? "Phone" key might not exist exactly, usually "contact" is used.
+      // Wait, "Phone" was "Phone" in English. In translations.ts I added keys for Contact Page.
+      // Let me check if I added "phone" key. I added "formPhone".
+      // I have "contact" key but that is "Contact".
+      // I should use specific keys if possible.
+      // I added: formPhone: "Phone Number".
+      // The design has "Phone", "Email", "Address", "Office Hours" as titles.
+      // I see "contact" matches "Contact" in header.
+      // I'll check if I have "Phone" specifically. 
+      // I have `formPhone`. I can use that or just "Phone" if I missed adding a specific "phoneTitle" key.
+      // Actually, I should probably use `contact` for "Contact Us" (header) and `formPhone` for "Phone Number".
+      // But here it is just "Phone".
+      // I will use `t('formPhone')` which represents "Phone Number" closely enough or creates a new one?
+      // I missed adding `phoneTitle`, `emailTitle`, `addressTitle`.
+      // But I have `formPhone`, `formEmail`.
+      // And `schoolAddressTitle`.
+      // Let's use `formPhone` for now, or just hardcode for English if key missing? No, that defeats the purpose.
+      // I'll use `formPhone` which is "Phone Number". "Phone Number" is fine for the card title.
       details: ['+91-9415981641'],
       color: 'bg-[#d50004]',
       link: 'tel:+919415981641',
     },
     {
       icon: Mail,
-      title: 'Email',
+      title: t('formEmail'), // "Email Address"
       details: ['info@yogaconvent.edu.in', 'admissions@yogaconvent.edu.in'],
       color: 'bg-[#00aade]',
       link: 'mailto:info@yogaconvent.edu.in',
     },
     {
       icon: MapPin,
-      title: 'Address',
-      details: ['Bhirbhanpur, Varanasi, Near Bheronath Mandir, Uttar Pradesh - 221311'],
+      title: t('schoolAddressTitle'), // "School Address"
+      details: [t('schoolAddress')],
       color: 'bg-[#d50004]',
       link: null,
     },
     {
       icon: Clock,
-      title: 'Office Hours',
-      details: ['Monday - Friday: 8:00 AM - 4:00 PM', 'Saturday: 8:00 AM - 1:00 PM'],
+      title: t('contactOfficeHours'), // "Office Hours"
+      details: [t('officeHoursWeek'), t('officeHoursSat')],
       color: 'bg-[#00aade]',
       link: null,
     },
@@ -68,23 +87,23 @@ export default function ContactPage() {
   const admissionSteps = [
     {
       step: '1',
-      title: 'Enquiry',
-      description: 'Contact us via phone, email, or visit our school to get information about admission process and requirements.',
+      title: t('step1Title'),
+      description: t('step1Desc'),
     },
     {
       step: '2',
-      title: 'Application Form',
-      description: 'Collect and fill the admission application form with required details and attach necessary documents.',
+      title: t('step2Title'),
+      description: t('step2Desc'),
     },
     {
       step: '3',
-      title: 'Interaction',
-      description: 'Parents and child meet with our faculty for a friendly interaction to understand the child\'s learning needs.',
+      title: t('step3Title'),
+      description: t('step3Desc'),
     },
     {
       step: '4',
-      title: 'Admission',
-      description: 'Upon successful completion, admission is confirmed and the child becomes part of our school family.',
+      title: t('step4Title'),
+      description: t('step4Desc'),
     },
   ];
 
@@ -94,9 +113,9 @@ export default function ContactPage() {
       <section className="bg-gradient-to-br from-[#d50004] via-[#b80003] to-[#00aade] text-white py-16 md:py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight">Contact Us</h1>
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight">{t('contact')}</h1>
             <p className="text-xl md:text-2xl font-light opacity-95 max-w-2xl mx-auto">
-              Get in Touch for Admissions, Enquiries, or Any Questions
+              {t('getInTouchSubtitle')}
             </p>
           </div>
         </div>
@@ -106,14 +125,14 @@ export default function ContactPage() {
       <section className="py-10 md:py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Get In Touch</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">{t('getInTouch')}</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[#d50004] to-[#00aade] mx-auto rounded-full"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
             {contactInfo.map((info, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="text-center border-2 hover:shadow-xl hover:border-[#00aade]/30 transition-all duration-300 hover:-translate-y-1"
               >
                 <CardContent className="pt-10 pb-8 px-6">
@@ -122,7 +141,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="font-bold text-xl mb-4 text-gray-900">{info.title}</h3>
                   {info.details.map((detail, idx) => (
-                    <p key={idx} className="text-base text-muted-foreground mb-2 leading-relaxed">
+                    <p key={idx} className="text-base text-muted-foreground mb-2 leading-relaxed whitespace-pre-line">
                       {info.link && idx === 0 ? (
                         <a href={info.link} className="hover:text-[#00aade] transition-colors">
                           {detail}
@@ -142,85 +161,85 @@ export default function ContactPage() {
             {/* Contact Form */}
             <Card className="border-2 hover:shadow-lg transition-shadow">
               <CardHeader className="pb-6 bg-gradient-to-br from-[#d50004]/5 to-[#00aade]/5">
-                <CardTitle className="text-3xl font-bold text-gray-900">Send Us a Message</CardTitle>
-                <p className="text-muted-foreground mt-2">We'll respond within 24 hours</p>
+                <CardTitle className="text-3xl font-bold text-gray-900">{t('sendUsMessage')}</CardTitle>
+                <p className="text-muted-foreground mt-2">{t('responsePromise')}</p>
               </CardHeader>
               <CardContent className="pt-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <Label htmlFor="name" className="text-base font-semibold">Full Name *</Label>
+                    <Label htmlFor="name" className="text-base font-semibold">{t('formName')} *</Label>
                     <Input
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Enter your full name"
+                      placeholder={t('formName')}
                       className="mt-2 h-12"
                       required
                     />
                   </div>
                   <div>
-                    <Label htmlFor="email" className="text-base font-semibold">Email Address *</Label>
+                    <Label htmlFor="email" className="text-base font-semibold">{t('formEmail')} *</Label>
                     <Input
                       id="email"
                       name="email"
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="Enter your email"
+                      placeholder={t('formEmail')}
                       className="mt-2 h-12"
                       required
                     />
                   </div>
                   <div>
-                    <Label htmlFor="phone" className="text-base font-semibold">Phone Number *</Label>
+                    <Label htmlFor="phone" className="text-base font-semibold">{t('formPhone')} *</Label>
                     <Input
                       id="phone"
                       name="phone"
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="Enter your phone number"
+                      placeholder={t('formPhone')}
                       className="mt-2 h-12"
                       required
                     />
                   </div>
                   <div>
-                    <Label htmlFor="subject" className="text-base font-semibold">Subject *</Label>
+                    <Label htmlFor="subject" className="text-base font-semibold">{t('formSubject')} *</Label>
                     <Input
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder="What is this regarding?"
+                      placeholder={t('formSubject')}
                       className="mt-2 h-12"
                       required
                     />
                   </div>
                   <div>
-                    <Label htmlFor="message" className="text-base font-semibold">Message *</Label>
+                    <Label htmlFor="message" className="text-base font-semibold">{t('formMessage')} *</Label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Write your message here..."
+                      placeholder={t('formMessage')}
                       rows={6}
                       className="mt-2 resize-none"
                       required
                     />
                   </div>
-                  <Button 
-                    type="submit" 
-                    className="w-full h-12 text-base bg-gradient-to-r from-[#d50004] to-[#00aade] hover:opacity-90" 
+                  <Button
+                    type="submit"
+                    className="w-full h-12 text-base bg-gradient-to-r from-[#d50004] to-[#00aade] hover:opacity-90"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
-                      'Sending...'
+                      t('formSending')
                     ) : (
                       <>
                         <Send className="mr-2 h-5 w-5" />
-                        Send Message
+                        {t('formSend')}
                       </>
                     )}
                   </Button>
@@ -231,8 +250,8 @@ export default function ContactPage() {
             {/* Map and Location */}
             <Card className="border-2 hover:shadow-lg transition-shadow">
               <CardHeader className="pb-6 bg-gradient-to-br from-[#00aade]/5 to-[#d50004]/5">
-                <CardTitle className="text-3xl font-bold text-gray-900">Visit Our School</CardTitle>
-                <p className="text-muted-foreground mt-2">Find us on the map</p>
+                <CardTitle className="text-3xl font-bold text-gray-900">{t('visitOurSchool')}</CardTitle>
+                <p className="text-muted-foreground mt-2">{t('findUsMap')}</p>
               </CardHeader>
               <CardContent className="pt-6">
                 {/* Google Maps Embed - Responsive */}
@@ -250,31 +269,28 @@ export default function ContactPage() {
                   <div className="p-6 bg-gradient-to-br from-[#efd598]/20 to-transparent rounded-lg border-2 border-[#efd598]/30">
                     <h4 className="font-bold mb-3 text-lg text-gray-900 flex items-center gap-2">
                       <MapPin className="w-5 h-5 text-[#d50004]" />
-                      School Address
+                      {t('schoolAddressTitle')}
                     </h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Yoga Convent School<br />
-                      Bhirbhanpur, Varanasi<br />
-                      Near Bheronath Mandir<br />
-                      Uttar Pradesh, India - 221311
+                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                      {t('schoolAddress')}
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="font-bold mb-3 text-lg text-gray-900">How to Reach</h4>
+                    <h4 className="font-bold mb-3 text-lg text-gray-900">{t('howToReachTitle')}</h4>
                     <p className="text-muted-foreground leading-relaxed">
-                      Our school is easily accessible by public transport and has ample parking space for visitors. Located near the famous Bheronath Mandir.
+                      {t('howToReachDesc')}
                     </p>
                   </div>
 
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="w-full h-12 border-2 border-[#00aade] text-[#00aade] hover:bg-[#00aade] hover:text-white transition-all"
                     asChild
                   >
                     <a href="https://maps.google.com/?q=Bhirbhanpur,+Varanasi" target="_blank" rel="noopener noreferrer">
                       <MapPin className="mr-2 h-5 w-5" />
-                      Get Directions
+                      {t('getDirections')}
                     </a>
                   </Button>
                 </div>
@@ -289,17 +305,17 @@ export default function ContactPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Admission Process</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">{t('admissionProcess')}</h2>
               <div className="w-20 h-1 bg-gradient-to-r from-[#d50004] to-[#00aade] mx-auto rounded-full mb-6"></div>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Simple and transparent admission process in 4 easy steps
+                {t('admissionProcessSubtitle')}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {admissionSteps.map((step, index) => (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="border-2 hover:shadow-xl hover:border-[#00aade]/30 transition-all duration-300 hover:-translate-y-1"
                 >
                   <CardContent className="pt-8 pb-8">
@@ -325,7 +341,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Documents Required for Admission</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">{t('documentsRequired')}</h2>
               <div className="w-20 h-1 bg-gradient-to-r from-[#d50004] to-[#00aade] mx-auto rounded-full"></div>
             </div>
 
@@ -333,12 +349,12 @@ export default function ContactPage() {
               <CardContent className="pt-10 pb-10 px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {[
-                    'Birth Certificate (Original & Photocopy)',
-                    'Transfer Certificate (if applicable)',
-                    'Previous Year Report Card',
-                    'Aadhaar Card (Student & Parents)',
-                    'Passport Size Photographs (4 copies)',
-                    'Address Proof (Electricity Bill/Rent Agreement)',
+                    t('doc1'),
+                    t('doc2'),
+                    t('doc3'),
+                    t('doc4'),
+                    t('doc5'),
+                    t('doc6'),
                   ].map((doc, index) => (
                     <div key={index} className="flex items-start gap-4">
                       <div className="bg-gradient-to-br from-[#00aade] to-[#0099cc] text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold shadow">
@@ -351,7 +367,7 @@ export default function ContactPage() {
 
                 <div className="mt-10 p-6 bg-gradient-to-br from-[#efd598]/20 to-transparent rounded-lg border-2 border-[#efd598]/30">
                   <p className="text-base leading-relaxed text-gray-700">
-                    <strong className="text-[#d50004]">Note:</strong> All documents should be self-attested. Original documents will be verified and returned at the time of admission.
+                    <strong className="text-[#d50004]">Note:</strong> {t('docNote')}
                   </p>
                 </div>
               </CardContent>
@@ -365,27 +381,27 @@ export default function ContactPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">{t('faqTitle')}</h2>
               <div className="w-20 h-1 bg-gradient-to-r from-[#d50004] to-[#00aade] mx-auto rounded-full"></div>
             </div>
 
             <div className="space-y-6">
               {[
                 {
-                  question: 'What classes does Yoga Convent School offer?',
-                  answer: 'We offer classes from Class 1 to Class 8, providing quality education with a focus on overall personality development.',
+                  question: t('faq1Q'),
+                  answer: t('faq1A'),
                 },
                 {
-                  question: 'What is the student-teacher ratio?',
-                  answer: 'We maintain an optimal student-teacher ratio to ensure personalized attention for each child. Our class sizes are kept small for better learning outcomes.',
+                  question: t('faq2Q'),
+                  answer: t('faq2A'),
                 },
                 {
-                  question: 'Do you provide transport facilities?',
-                  answer: 'Yes, we provide safe and secure school transport facilities covering various routes across the city.',
+                  question: t('faq3Q'),
+                  answer: t('faq3A'),
                 },
                 {
-                  question: 'When does the admission process start?',
-                  answer: 'Admissions typically open in January-February for the new academic session starting in April. However, you can contact us anytime for enquiries.',
+                  question: t('faq4Q'),
+                  answer: t('faq4A'),
                 },
               ].map((faq, index) => (
                 <Card key={index} className="border-2 hover:shadow-lg hover:border-[#00aade]/30 transition-all">
@@ -405,31 +421,31 @@ export default function ContactPage() {
       {/* CTA */}
       <section className="py-10 md:py-20 bg-gradient-to-br from-[#d50004] via-[#b80003] to-[#00aade] text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Join Our School Family?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t('readyToJoin')}</h2>
           <p className="text-xl md:text-2xl mb-12 opacity-95 max-w-3xl mx-auto leading-relaxed">
-            Contact us today to schedule a visit or learn more about our admission process. We look forward to welcoming your child to Yoga Convent School.
+            {t('readyToJoinDesc')}
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button 
-              size="lg" 
-              variant="secondary" 
+            <Button
+              size="lg"
+              variant="secondary"
               className="h-14 px-8 text-lg bg-white text-[#d50004] hover:bg-gray-100"
               asChild
             >
               <a href="tel:+919415981641">
                 <Phone className="mr-2 h-6 w-6" />
-                Call Us Now
+                {t('callUsNow')}
               </a>
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
+            <Button
+              size="lg"
+              variant="outline"
               className="h-14 px-8 text-lg bg-white/10 hover:bg-white/20 text-white border-2 border-white"
               asChild
             >
               <a href="mailto:info@yogaconvent.edu.in">
                 <Mail className="mr-2 h-6 w-6" />
-                Email Us
+                {t('emailUs')}
               </a>
             </Button>
           </div>

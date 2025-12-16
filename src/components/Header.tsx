@@ -39,7 +39,7 @@ export default function Header() {
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                Yoga Convent School
+                {t('headerSchoolName')}
               </h1>
               <p className="text-sm font-medium text-gray-500">Bhairavnath, Varanasi</p>
             </div>

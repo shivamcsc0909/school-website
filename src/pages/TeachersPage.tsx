@@ -1,11 +1,15 @@
 // import { Card, CardContent } from '@/components/ui/card';
 import { GraduationCap, Award, Users } from 'lucide-react';
 
+import { useLanguage } from '@/contexts/LanguageContext';
+
 export default function TeachersPage() {
+  const { t } = useLanguage();
+
   const teachers = [
     {
       name: 'Mrs. Sunita Sharma',
-      designation: 'English Teacher',
+      designation: t('englishTeacher'),
       email: 'sunita.sharma@yogaconvent.edu.in',
       phone: '+91 98765 43210',
       subject: 'English & Administration',
@@ -13,7 +17,7 @@ export default function TeachersPage() {
     },
     {
       name: 'Mr. Rajesh Kumar',
-      designation: 'Mathematics Teacher',
+      designation: t('mathsTeacher'),
       email: 'rajesh.kumar@yogaconvent.edu.in',
       phone: '+91 98765 43211',
       subject: 'Mathematics',
@@ -21,7 +25,7 @@ export default function TeachersPage() {
     },
     {
       name: 'Mrs. Priya Verma',
-      designation: 'Science Teacher',
+      designation: t('scienceTeacher'),
       email: 'priya.verma@yogaconvent.edu.in',
       phone: '+91 98765 43212',
       subject: 'Science',
@@ -29,7 +33,7 @@ export default function TeachersPage() {
     },
     {
       name: 'Ms. Anjali Singh',
-      designation: 'Hindi Teacher',
+      designation: t('hindiTeacher'),
       email: 'anjali.singh@yogaconvent.edu.in',
       phone: '+91 98765 43213',
       subject: 'Hindi',
@@ -37,7 +41,7 @@ export default function TeachersPage() {
     },
     {
       name: 'Mr. Amit Patel',
-      designation: 'Social Science Teacher',
+      designation: t('socialTeacher'),
       email: 'amit.patel@yogaconvent.edu.in',
       phone: '+91 98765 43214',
       subject: 'Social Science',
@@ -45,7 +49,7 @@ export default function TeachersPage() {
     },
     {
       name: 'Mrs. Kavita Gupta',
-      designation: 'English Teacher',
+      designation: t('englishTeacher'),
       email: 'kavita.gupta@yogaconvent.edu.in',
       phone: '+91 98765 43215',
       subject: 'English',
@@ -53,7 +57,7 @@ export default function TeachersPage() {
     },
     {
       name: 'Mr. Vikram Mehta',
-      designation: 'Computer Science Teacher',
+      designation: t('computerTeacher'),
       email: 'vikram.mehta@yogaconvent.edu.in',
       phone: '+91 98765 43216',
       subject: 'Computer Science',
@@ -61,7 +65,7 @@ export default function TeachersPage() {
     },
     {
       name: 'Mrs. Neha Reddy',
-      designation: 'Mathematics Teacher',
+      designation: t('mathsTeacher'),
       email: 'neha.reddy@yogaconvent.edu.in',
       phone: '+91 98765 43217',
       subject: 'Mathematics',
@@ -69,7 +73,7 @@ export default function TeachersPage() {
     },
     {
       name: 'Ms. Pooja Joshi',
-      designation: 'EVS Teacher',
+      designation: t('evsTeacher'),
       email: 'pooja.joshi@yogaconvent.edu.in',
       phone: '+91 98765 43218',
       subject: 'Environmental Studies',
@@ -77,7 +81,7 @@ export default function TeachersPage() {
     },
     {
       name: 'Mr. Sanjay Nair',
-      designation: 'Physical Education Teacher',
+      designation: t('peTeacher'),
       email: 'sanjay.nair@yogaconvent.edu.in',
       phone: '+91 98765 43219',
       subject: 'Physical Education',
@@ -85,7 +89,7 @@ export default function TeachersPage() {
     },
     {
       name: 'Mrs. Rekha Desai',
-      designation: 'Art & Craft Teacher',
+      designation: t('artTeacher'),
       email: 'rekha.desai@yogaconvent.edu.in',
       phone: '+91 98765 43220',
       subject: 'Art & Craft',
@@ -93,7 +97,7 @@ export default function TeachersPage() {
     },
     {
       name: 'Ms. Divya Sharma',
-      designation: 'Music Teacher',
+      designation: t('musicTeacher'),
       email: 'divya.sharma@yogaconvent.edu.in',
       phone: '+91 98765 43221',
       subject: 'Music',
@@ -120,9 +124,9 @@ export default function TeachersPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <Award className="h-20 w-20 mx-auto mb-6 animate-pulse" />
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">Our Faculty</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">{t('ourFaculty')}</h1>
             <p className="text-xl md:text-2xl opacity-95 font-light">
-              Meet Our Highly Experienced and Dedicated Teachers
+              {t('meetOurTeam')}
             </p>
           </div>
         </div>
@@ -134,14 +138,14 @@ export default function TeachersPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 border border-red-300 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Users className="w-4 h-4" />
-              Excellence in Teaching
+              {t('excellenceInTeaching')}
             </div>
-            <h2 className="text-4xl font-bold mb-6 text-gray-900">Passionate Educators</h2>
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">{t('passionateEducators')}</h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              At Yoga Convent School, we take pride in having highly experienced and best teachers who are passionate about education and committed to student success. Our faculty members bring years of expertise, dedication, and a genuine love for teaching.
+              {t('passionateEducatorsDesc')}
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Each teacher is specially trained in modern teaching methodologies and child psychology. They understand that every child is unique and adapt their teaching style according to students' learning levels.
+              {t('educatorsDesc2')}
             </p>
           </div>
         </div>
@@ -168,8 +172,8 @@ export default function TeachersPage() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Meet Our Team</h2>
-            <p className="text-gray-600 text-lg">Dedicated professionals shaping tomorrow's leaders</p>
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">{t('meetOurTeam')}</h2>
+            <p className="text-gray-600 text-lg">{t('leadershipSubtitle')}</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
@@ -217,18 +221,18 @@ export default function TeachersPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4 text-gray-900">What Makes Our Teachers Special</h2>
-              <p className="text-gray-600 text-lg">The qualities that set our educators apart</p>
+              <h2 className="text-4xl font-bold mb-4 text-gray-900">{t('whatMakesTeachersSpecial')}</h2>
+              <p className="text-gray-600 text-lg">{t('specialQualities')}</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { num: 1, title: 'Highly Qualified', desc: 'All our teachers hold relevant degrees and certifications with years of teaching experience.' },
-                { num: 2, title: 'Child-Centric Approach', desc: 'Trained in child psychology to understand unique needs of each student.' },
-                { num: 3, title: 'Adaptive Teaching', desc: 'Teaching style adapted according to students\' learning levels and pace.' },
-                { num: 4, title: 'Passionate & Dedicated', desc: 'Genuinely passionate about education and student success.' },
-                { num: 5, title: 'Continuous Development', desc: 'Regular training keeps teachers updated with latest methodologies.' },
-                { num: 6, title: 'Parent Communication', desc: 'Regular communication with parents about student progress.' }
+                { num: 1, title: t('expertTeachers'), desc: t('featureTeachersDesc') },
+                { num: 2, title: t('featureChildFriendly'), desc: t('educatorsDesc2') },
+                { num: 3, title: t('featureHolistic'), desc: t('featureHolisticDesc') },
+                { num: 4, title: t('passionateEducators'), desc: t('passionateEducatorsDesc').split('.')[0] + '.' },
+                { num: 5, title: t('academicExcellence'), desc: t('featureQualityDesc') },
+                { num: 6, title: t('contactInfo'), desc: t('statsAssessmentDesc') }
               ].map((item, idx) => (
                 <div key={idx} className="quality-card">
                   <div className="quality-number">{item.num}</div>
