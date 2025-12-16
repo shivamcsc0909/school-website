@@ -7,6 +7,7 @@ import HomePage from '@/pages/HomePage';
 import AboutPage from '@/pages/AboutPage';
 import AcademicsPage from '@/pages/AcademicsPage';
 import TeachersPage from '@/pages/TeachersPage';
+import TimeTablePage from '@/pages/TimeTablePage';
 import GalleryPage from '@/pages/GalleryPage';
 import EventsPage from '@/pages/EventsPage';
 import ContactPage from '@/pages/ContactPage';
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/academics" element={<AcademicsPage />} />
             <Route path="/teachers" element={<TeachersPage />} />
+            <Route path="/timetable" element={<TimeTablePage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/contact" element={<ContactPage />} />

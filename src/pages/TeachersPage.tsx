@@ -1,5 +1,5 @@
 // import { Card, CardContent } from '@/components/ui/card';
-import { Mail, Phone, GraduationCap, Award, Users, BookOpen } from 'lucide-react';
+import { GraduationCap, Award, Users } from 'lucide-react';
 
 export default function TeachersPage() {
   const teachers = [
@@ -106,8 +106,8 @@ export default function TeachersPage() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 opacity-5 flex items-center justify-center">
-          <img 
-            src="https://i.postimg.cc/FsWq12tT/yoga-convent-school-logo.png" 
+          <img
+            src="https://i.postimg.cc/FsWq12tT/yoga-convent-school-logo.png"
             alt="Yoga Convent School Logo"
             className="w-96 h-96 object-contain"
           />
@@ -151,15 +151,15 @@ export default function TeachersPage() {
       <section className="py-16 md:py-24 relative bg-white">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none overflow-hidden">
           <div className="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
-            <img 
-              src="https://i.postimg.cc/FsWq12tT/yoga-convent-school-logo.png" 
+            <img
+              src="https://i.postimg.cc/FsWq12tT/yoga-convent-school-logo.png"
               alt="Logo"
               className="w-[500px] h-[500px] object-contain"
             />
           </div>
           <div className="absolute bottom-1/4 right-1/4 transform translate-x-1/2 translate-y-1/2">
-            <img 
-              src="https://i.postimg.cc/FsWq12tT/yoga-convent-school-logo.png" 
+            <img
+              src="https://i.postimg.cc/FsWq12tT/yoga-convent-school-logo.png"
               alt="Logo"
               className="w-[500px] h-[500px] object-contain"
             />
@@ -171,62 +171,41 @@ export default function TeachersPage() {
             <h2 className="text-4xl font-bold mb-4 text-gray-900">Meet Our Team</h2>
             <p className="text-gray-600 text-lg">Dedicated professionals shaping tomorrow's leaders</p>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {teachers.map((teacher, index) => (
               <div key={index} className="visiting-card-wrapper">
                 <div className="visiting-card">
-                  {/* Top Red Bar with Logo */}
-                  <div className="card-top-bar">
-                    <img 
-                      src="https://i.postimg.cc/FsWq12tT/yoga-convent-school-logo.png" 
-                      alt="Logo"
-                      className="card-logo"
-                    />
-                    <div className="school-title">
-                      <h4>Yoga Convent School</h4>
+                  {/* Left Main Content */}
+                  <div className="card-main-content">
+                    {/* Centered Logo */}
+                    <div className="logo-container">
+                      {/* Using a placeholder text if image fails or just as fallback/design */}
+                      <img
+                        src="https://i.postimg.cc/FsWq12tT/yoga-convent-school-logo.png"
+                        alt="Logo"
+                        className="center-logo"
+                      />
+                    </div>
+
+                    {/* Bottom Details */}
+                    <div className="teacher-details">
+                      <div className="teacher-name-box">
+                        <h3 className="teacher-name">{(index % 2 === 0 ? "Teacher " : "") + "name"}</h3> {/* Placeholder logic just for structure display or keeping original name logic */}
+                        <h3 className="teacher-name">{teacher.name}</h3>
+                      </div>
+                      <div className="teacher-role-box">
+                        <p className="teacher-role">{teacher.designation}</p>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Card Body */}
-                  <div className="card-body-section">
-                    {/* Teacher Name */}
-                    <h3 className="teacher-name">{teacher.name}</h3>
-                    
-                    {/* Designation */}
-                    <p className="teacher-role">{teacher.designation}</p>
-                    
-                    {/* Subject Badge */}
-                    <div className="subject-tag">
-                      <BookOpen className="subject-icon" />
-                      <span>{teacher.subject}</span>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="card-divider"></div>
-
-                    {/* Contact Info */}
-                    <div className="contact-section">
-                      <div className="contact-row">
-                        <Mail className="contact-icon" />
-                        <span className="contact-value">{teacher.email}</span>
-                      </div>
-                      <div className="contact-row">
-                        <Phone className="contact-icon" />
-                        <span className="contact-value">{teacher.phone}</span>
-                      </div>
-                    </div>
-
-                    {/* Experience Badge */}
-                    <div className="experience-badge">
-                      <Award className="exp-icon" />
-                      <span>{teacher.experience} Experience</span>
-                    </div>
-                  </div>
-
-                  {/* Bottom Red Strip */}
-                  <div className="card-bottom-bar">
-                    <span>Excellence in Education</span>
+                  {/* Right Sidebar */}
+                  <div className="card-sidebar">
+                    <span className="sidebar-char">अ</span>
+                    <span className="sidebar-char">क</span>
+                    <span className="sidebar-char">A</span>
+                    <span className="sidebar-char">1</span>
                   </div>
                 </div>
               </div>
@@ -243,7 +222,7 @@ export default function TeachersPage() {
               <h2 className="text-4xl font-bold mb-4 text-gray-900">What Makes Our Teachers Special</h2>
               <p className="text-gray-600 text-lg">The qualities that set our educators apart</p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { num: 1, title: 'Highly Qualified', desc: 'All our teachers hold relevant degrees and certifications with years of teaching experience.' },
@@ -269,228 +248,173 @@ export default function TeachersPage() {
         .visiting-card-wrapper {
           display: flex;
           justify-content: center;
-          perspective: 1000px;
+          background: white;
         }
 
-        /* Main Card - Standard Visiting Card Dimensions (89mm x 51mm ratio) */
+        /* Main Card */
         .visiting-card {
-          width: 320px;
+          width: 380px;
+          height: 240px;
           background: white;
-          border-radius: 8px;
-          overflow: hidden;
-          box-shadow: 
-            0 2px 4px rgba(0, 0, 0, 0.1),
-            0 4px 12px rgba(0, 0, 0, 0.08);
-          transition: all 0.3s ease;
-          border: 1px solid rgba(220, 38, 38, 0.15);
+          border: 1px solid #1f2937;
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          padding: 0;
+          box-shadow: none;
+          transition: transform 0.3s ease;
         }
 
         .visiting-card:hover {
-          transform: translateY(-5px) scale(1.02);
-          box-shadow: 
-            0 8px 16px rgba(220, 38, 38, 0.2),
-            0 12px 32px rgba(220, 38, 38, 0.15);
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* Top Red Bar */
-        .card-top-bar {
-          background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-          padding: 0.7rem 1rem;
+        /* Main Content Area (Left side) */
+        .card-main-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          padding: 1.5rem;
+        }
+
+        /* Center Logo */
+        .logo-container {
+          position: absolute;
+          top: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          border: 1px solid #1f2937;
           display: flex;
           align-items: center;
-          gap: 0.7rem;
+          justify-content: center;
+          background: white;
+          z-index: 10;
         }
 
-        .card-logo {
-          width: 35px;
-          height: 35px;
-          background: white;
-          border-radius: 6px;
-          padding: 3px;
+        .center-logo {
+          width: 90px;
+          height: 90px;
           object-fit: contain;
+          border-radius: 50%;
         }
 
-        .school-title h4 {
-          font-size: 0.95rem;
-          font-weight: 700;
-          color: white;
-          margin: 0;
-          line-height: 1.2;
+        .logo-text {
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: #374151;
         }
 
-        /* Card Body */
-        .card-body-section {
-          padding: 1rem;
+        /* Bottom Details */
+        .teacher-details {
+          margin-top: auto;
+          margin-bottom: 0.5rem;
+        }
+
+        .teacher-name-box {
+          border: 1px solid #1f2937;
+          border-radius: 8px;
+          padding: 0.25rem 0.75rem;
+          margin-bottom: 0px;
+          display: inline-block;
           background: white;
+          position: relative;
+          z-index: 5;
+          width: 100%;
         }
 
         .teacher-name {
-          font-size: 1.1rem;
-          font-weight: 700;
+          font-size: 1rem;
+          font-weight: 600;
           color: #1f2937;
-          margin: 0 0 0.3rem 0;
-          line-height: 1.3;
+          margin: 0;
+          text-transform: capitalize;
+        }
+
+        .teacher-role-box {
+          border: 1px solid #1f2937;
+          border-top: none;
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 8px;
+          padding: 0.2rem 0.75rem;
+          display: inline-block;
+          background: white;
+          width: 85%;
+          margin-left: 0;
         }
 
         .teacher-role {
           font-size: 0.8rem;
-          font-weight: 600;
-          color: #dc2626;
-          text-transform: uppercase;
-          letter-spacing: 0.3px;
-          margin: 0 0 0.7rem 0;
+          color: #1f2937;
+          margin: 0;
+          font-weight: 500;
         }
 
-        .subject-tag {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.3rem;
-          background: #fef2f2;
-          border: 1px solid #fca5a5;
-          color: #991b1b;
-          padding: 0.3rem 0.6rem;
-          border-radius: 12px;
-          font-size: 0.7rem;
-          font-weight: 600;
-          margin-bottom: 0.8rem;
-        }
-
-        .subject-icon {
-          width: 12px;
-          height: 12px;
-        }
-
-        .card-divider {
-          height: 1.5px;
-          background: linear-gradient(to right, #dc2626, #ef4444, #dc2626);
-          margin: 0.8rem 0;
-          border-radius: 2px;
-        }
-
-        /* Contact Section */
-        .contact-section {
+        /* Right Sidebar Pane */
+        .card-sidebar {
+          width: 50px;
+          border-left: 1px solid #1f2937;
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
-          margin-bottom: 0.8rem;
-        }
-
-        .contact-row {
-          display: flex;
-          align-items: flex-start;
-          gap: 0.5rem;
-        }
-
-        .contact-icon {
-          width: 14px;
-          height: 14px;
-          color: #dc2626;
-          flex-shrink: 0;
-          margin-top: 2px;
-        }
-
-        .contact-value {
-          font-size: 0.7rem;
-          color: #4b5563;
-          font-weight: 500;
-          word-break: break-all;
-          line-height: 1.4;
-        }
-
-        /* Experience Badge */
-        .experience-badge {
-          display: inline-flex;
           align-items: center;
-          gap: 0.4rem;
-          background: #f9fafb;
-          border: 1px solid #e5e7eb;
-          padding: 0.35rem 0.6rem;
-          border-radius: 6px;
-          font-size: 0.7rem;
-          color: #374151;
-          font-weight: 600;
-          margin-top: 0.5rem;
+          justify-content: space-evenly;
+          padding: 1rem 0;
+          background: white;
         }
 
-        .exp-icon {
-          width: 12px;
-          height: 12px;
-          color: #dc2626;
+        .sidebar-char {
+          font-size: 2rem;
+          font-weight: 400;
+          color: #000;
+          line-height: 1;
         }
 
-        /* Bottom Red Strip */
-        .card-bottom-bar {
-          background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-          padding: 0.5rem;
-          text-align: center;
-        }
-
-        .card-bottom-bar span {
-          font-size: 0.7rem;
-          color: white;
-          font-weight: 600;
-          letter-spacing: 0.5px;
-          text-transform: uppercase;
-        }
-
-        /* Quality Cards */
+        /* Quality Cards Styles (kept as is) */
         .quality-card {
-          padding: 2em;
-          color: #1f2937;
-          background-color: #ffffff;
-          border: 1px solid rgba(239, 68, 68, 0.2);
-          border-radius: 15px;
-          transition: all ease-in-out 0.3s;
-          box-shadow: 0 2px 8px rgba(220, 38, 38, 0.08);
+           padding: 2em;
+           color: #1f2937;
+           background-color: #ffffff;
+           border: 1px solid rgba(220, 38, 38, 0.1);
+           border-radius: 15px;
+           transition: all ease-in-out 0.3s;
         }
-
+        
         .quality-number {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 3.5em;
-          height: 3.5em;
-          border-radius: 12px;
-          background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-          color: white;
-          font-size: 1.5em;
-          font-weight: 700;
-          margin-bottom: 1em;
-          box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+           display: inline-flex;
+           align-items: center;
+           justify-content: center;
+           width: 3.5em;
+           height: 3.5em;
+           border-radius: 12px;
+           background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+           color: white;
+           font-size: 1.5em;
+           font-weight: 700;
+           margin-bottom: 1em;
         }
 
-        .quality-card:hover {
-          background: rgba(254, 242, 242, 0.8);
-          outline: 2px solid #dc2626;
-          transform: translateY(-4px);
-          box-shadow: 
-            inset 0 0 50px rgba(254, 226, 226, 0.8),
-            inset 12px 0 50px rgba(220, 38, 38, 0.25),
-            inset -12px 0 50px rgba(220, 38, 38, 0.25),
-            0 0 30px rgba(220, 38, 38, 0.15),
-            -6px 0 40px rgba(220, 38, 38, 0.25),
-            6px 0 40px rgba(220, 38, 38, 0.25);
-        }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 640px) {
           .visiting-card {
-            width: 300px;
+            width: 320px;
+            height: 220px;
           }
-
-          .teacher-name {
-            font-size: 1rem;
+          .logo-container {
+             width: 80px;
+             height: 80px;
+             top: 20px;
           }
-
-          .card-body-section {
-            padding: 0.9rem;
-          }
-        }
-
-        @media (min-width: 1280px) {
-          .visiting-card {
-            width: 310px;
-          }
+           .center-logo {
+             width: 70px;
+             height: 70px;
+           }
+           .sidebar-char {
+             font-size: 1.6rem;
+           }
         }
       `}</style>
     </div>

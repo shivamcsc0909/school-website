@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Flag, PartyPopper, Trophy, Heart, Mic, Palette, Sparkles, Users, BookOpen } from 'lucide-react';
+import { Calendar, Flag, PartyPopper, Trophy, Heart, Mic, Palette, Sparkles, Users, BookOpen, Zap } from 'lucide-react';
 
 export default function EventsPage() {
   const events = [
@@ -108,9 +108,18 @@ export default function EventsPage() {
       title: 'Festival Celebrations',
       date: 'Throughout the Year',
       color: 'from-rose-500 to-pink-500',
-      image: 'https://images.unsplash.com/photo-1545048702-79362596cdc9?w=800&h=600&fit=crop',
+      image: 'https://images.unsplash.com/photo-1511578314322-379afb476865',
       description: 'Celebrations of major Indian festivals like Diwali, Holi, Eid, Christmas with cultural programs and activities.',
       benefits: 'Teaches students about cultural diversity, promotes religious harmony, and respect for traditions.',
+    },
+    {
+      icon: Zap,
+      title: 'Science Exhibition',
+      date: 'October',
+      color: 'from-cyan-600 to-blue-600',
+      image: 'https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?w=800&h=600&fit=crop',
+      description: 'An innovative showcase where students present working models, experiments, and research projects.',
+      benefits: 'Encourages scientific temper, creativity, problem-solving skills, and practical application of knowledge.',
     },
   ];
 
@@ -156,8 +165,8 @@ export default function EventsPage() {
                 <CardContent className="p-0">
                   {/* Event Image */}
                   <div className="aspect-video overflow-hidden relative">
-                    <img 
-                      src={event.image} 
+                    <img
+                      src={event.image}
                       alt={event.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
