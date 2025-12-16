@@ -51,8 +51,8 @@ export default function Header() {
                 <Button
                   variant="ghost"
                   className={`text-sm font-medium relative group/nav hover:bg-blue-50 ${isActive(item.path)
-                    ? 'text-blue-600'
-                    : 'text-gray-700 hover:text-blue-600'
+                    ? 'text-blue-600 hover:!text-blue-600'
+                    : 'text-gray-700 hover:!text-blue-600'
                     }`}
                 >
                   {item.label}
@@ -70,8 +70,8 @@ export default function Header() {
               <Button
                 variant="ghost"
                 className={`text-sm font-medium relative group/nav hover:bg-blue-50 ${isActive('/timetable')
-                  ? 'text-blue-600'
-                  : 'text-gray-700 hover:text-blue-600'
+                  ? 'text-blue-600 hover:!text-blue-600'
+                  : 'text-gray-700 hover:!text-blue-600'
                   }`}
               >
                 {t('timetable')}
@@ -89,8 +89,8 @@ export default function Header() {
               <Button
                 variant="ghost"
                 className={`text-sm font-medium relative hover:bg-blue-50 ${isEventsActive
-                  ? 'text-blue-600'
-                  : 'text-gray-700 hover:text-blue-600'
+                  ? 'text-blue-600 hover:!text-blue-600'
+                  : 'text-gray-700 hover:!text-blue-600'
                   }`}
               >
                 {t('events')}
@@ -117,8 +117,8 @@ export default function Header() {
               <Button
                 variant="ghost"
                 className={`text-sm font-medium relative group/nav hover:bg-blue-50 ${isActive('/contact')
-                  ? 'text-blue-600'
-                  : 'text-gray-700 hover:text-blue-600'
+                  ? 'text-blue-600 hover:!text-blue-600'
+                  : 'text-gray-700 hover:!text-blue-600'
                   }`}
               >
                 {t('contact')}
