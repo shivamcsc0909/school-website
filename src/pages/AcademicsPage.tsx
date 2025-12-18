@@ -227,9 +227,9 @@ export default function AcademicsPage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-[#00aade]/20 hover:shadow-lg hover:border-[#00aade]/40 transition-all">
+              <Card className="border-2 border-[#d50004]/20 hover:shadow-lg hover:border-[#d50004]/40 transition-all">
                 <CardContent className="p-10">
-                  <h3 className="text-2xl font-bold mb-5 text-[#00aade]">
+                  <h3 className="text-2xl font-bold mb-5 text-[#d50004]">
                     {t('personalizedAttention')}
                   </h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -249,9 +249,9 @@ export default function AcademicsPage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-[#00aade]/20 hover:shadow-lg hover:border-[#00aade]/40 transition-all">
+              <Card className="border-2 border-[#d50004]/20 hover:shadow-lg hover:border-[#d50004]/40 transition-all">
                 <CardContent className="p-10">
-                  <h3 className="text-2xl font-bold mb-5 text-[#00aade]">
+                  <h3 className="text-2xl font-bold mb-5 text-[#d50004]">
                     {t('continuousAssessment')}
                   </h3>
                   <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -301,9 +301,9 @@ export default function AcademicsPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-[#00aade]/20 hover:shadow-xl hover:border-[#00aade]/40 transition-all duration-300 hover:-translate-y-1">
-              <CardHeader className="pb-6 bg-gradient-to-br from-[#00aade]/5 to-transparent">
-                <CardTitle className="text-2xl font-bold text-[#00aade]">
+            <Card className="border-2 border-[#d50004]/20 hover:shadow-xl hover:border-[#d50004]/40 transition-all duration-300 hover:-translate-y-1">
+              <CardHeader className="pb-6 bg-gradient-to-br from-[#d50004]/5 to-transparent">
+                <CardTitle className="text-2xl font-bold text-[#d50004]">
                   {t('advancedLearning')}
                 </CardTitle>
               </CardHeader>

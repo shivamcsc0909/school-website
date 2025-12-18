@@ -176,38 +176,71 @@ export default function TeachersPage() {
             <p className="text-gray-600 text-lg">{t('leadershipSubtitle')}</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {teachers.map((teacher, index) => (
-              <div key={index} className="visiting-card-wrapper">
-                <div className="visiting-card">
-                  {/* Left Main Content */}
-                  <div className="card-main-content">
-                    {/* Centered Logo */}
-                    <div className="logo-container">
+              <div key={index} className="teacher-card-container">
+                <div className="teacher-business-card">
+                  {/* School Logo Watermark Background */}
+                  <div className="logo-watermark-bg">
+                    <img
+                      src="https://i.postimg.cc/FsWq12tT/yoga-convent-school-logo.png"
+                      alt="School Logo"
+                      className="watermark-logo"
+                    />
+                  </div>
+
+                  {/* Diagonal Cut Overlay */}
+                  <div className="diagonal-cut"></div>
+
+                  {/* Left Section */}
+                  <div className="card-left-section">
+                    {/* School Logo */}
+                    <div className="school-logo-box">
                       <img
                         src="https://i.postimg.cc/FsWq12tT/yoga-convent-school-logo.png"
-                        alt="Logo"
-                        className="center-logo"
+                        alt="School Logo"
+                        className="school-logo-img"
                       />
                     </div>
 
-                    {/* Bottom Details */}
-                    <div className="teacher-details">
-                      <div className="teacher-name-box">
-                        <h3 className="teacher-name">{teacher.name}</h3>
+                    {/* Contact Icons */}
+                    <div className="contact-icons">
+                      <div className="icon-item">
+                        <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        <span className="icon-text">{teacher.phone}</span>
                       </div>
-                      <div className="teacher-role-box">
-                        <p className="teacher-role">{teacher.designation}</p>
+                      <div className="icon-item">
+                        <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span className="icon-text">{teacher.email}</span>
+                      </div>
+                      <div className="icon-item">
+                        <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span className="icon-text">Varanasi, UP</span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Right Sidebar */}
-                  <div className="card-sidebar">
-                    <span className="sidebar-char">अ</span>
-                    <span className="sidebar-char">क</span>
-                    <span className="sidebar-char">A</span>
-                    <span className="sidebar-char">1</span>
+                  {/* Right Section */}
+                  <div className="card-right-section">
+                    {/* Teacher Photo */}
+                    <div className="teacher-photo-circle">
+                      <svg className="photo-placeholder" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                      </svg>
+                    </div>
+
+                    {/* Teacher Info */}
+                    <div className="teacher-details">
+                      <h3 className="teacher-name-card">{teacher.name}</h3>
+                      <p className="teacher-designation-card">{teacher.subject}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -246,178 +279,246 @@ export default function TeachersPage() {
       </section>
 
       <style>{`
-        /* Visiting Card Container */
-        .visiting-card-wrapper {
+        /* Teacher Card Container */
+        .teacher-card-container {
           display: flex;
           justify-content: center;
-          background: white;
         }
 
-        /* Main Card */
-        .visiting-card {
-          width: 380px;
-          height: 240px;
-          background: white;
-          border: 2px solid #dc2626; /* Red border */
+        /* Main Business Card */
+        .teacher-business-card {
+          width: 100%;
+          max-width: 360px;
+          height: 220px;
+          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          border-radius: 16px;
           position: relative;
-          display: flex;
-          flex-direction: row;
-          padding: 0;
-          box-shadow: none;
-          border-radius: 12px;
           overflow: hidden;
-          transition: transform 0.3s ease;
-        }
-
-        .visiting-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(220, 38, 38, 0.15);
-        }
-
-        /* Main Content Area (Left side) */
-        .card-main-content {
-          flex: 1;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+          transition: all 0.3s ease;
           display: flex;
-          flex-direction: column;
-          position: relative;
-          padding: 1.5rem;
         }
 
-        /* Center Logo */
-        .logo-container {
+        .teacher-business-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+        }
+
+        /* School Logo Watermark - LAYER 2: Above diagonal, below content */
+        .logo-watermark-bg {
           position: absolute;
-          top: 25px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 90px;
-          height: 90px;
-          border-radius: 50%;
-          border: 2px solid #dc2626;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: white;
-          z-index: 10;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          top: 50%;
+          left: 40%;
+          transform: translate(-50%, -50%) rotate(-12deg);
+          width: 190px;
+          height: 190px;
+          opacity: 0.10;
+          pointer-events: none;
+          z-index: 2;
         }
 
-        .center-logo {
-          width: 70px;
-          height: 70px;
+        .watermark-logo {
+          width: 100%;
+          height: 100%;
           object-fit: contain;
         }
 
-        /* Bottom Details */
-        .teacher-details {
-          margin-top: auto;
-          margin-bottom: 0.5rem;
+        /* Diagonal Cut - LAYER 1: Lowest background layer */
+        .diagonal-cut {
+          position: absolute;
+          top: -50%;
+          right: -10%;
+          width: 110px;
+          height: 400px;
+          background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+          transform: rotate(20deg);
+          z-index: 1;
+          opacity: 0.88;
         }
 
-        .teacher-name-box {
-          border: 2px solid #dc2626;
-          border-radius: 8px;
-          padding: 0.5rem 1rem;
-          margin-bottom: 0px;
-          display: inline-block;
-          background: #fef2f2; /* Light red tint */
+        /* Left Section - LAYER 10: Top layer for all content */
+        .card-left-section {
+          flex: 1;
+          padding: 1.25rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          z-index: 10;
           position: relative;
-          z-index: 5;
-          width: 100%;
-          text-align: center;
         }
 
-        .teacher-name {
-          font-size: 1.1rem;
-          font-weight: 700;
-          color: #991b1b;
-          margin: 0;
-          text-transform: capitalize;
-        }
-
-        .teacher-role-box {
-          border: 2px solid #dc2626;
-          border-top: none;
-          border-bottom-left-radius: 8px;
-          border-bottom-right-radius: 8px;
-          padding: 0.3rem 0.75rem;
-          display: inline-block;
+        .school-logo-box {
+          width: 48px;
+          height: 48px;
           background: white;
-          width: 90%;
-          margin: 0 auto;
-          display: block;
-          text-align: center;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 6px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .teacher-role {
-          font-size: 0.85rem;
+        .school-logo-img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        .contact-icons {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .icon-item {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .icon {
+          width: 14px;
+          height: 14px;
           color: #dc2626;
-          margin: 0;
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
+          flex-shrink: 0;
         }
 
-        /* Right Sidebar Pane */
-        .card-sidebar {
-          width: 50px;
-          border-left: 2px solid #dc2626;
+        .icon-text {
+          font-size: 0.7rem;
+          color: #4b5563;
+          font-weight: 500;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        /* Right Section - LAYER 10: Top layer for all content */
+        .card-right-section {
+          width: 150px;
+          padding: 1.25rem 0.9rem;
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: space-evenly;
-          padding: 1rem 0;
-          background: #fef2f2;
+          justify-content: center;
+          gap: 0.75rem;
+          z-index: 10;
+          position: relative;
         }
 
-        .sidebar-char {
-          font-size: 1.8rem;
+        .teacher-photo-circle {
+          width: 85px;
+          height: 85px;
+          border-radius: 50%;
+          background: white;
+          border: 3px solid #dc2626;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+        }
+
+        .photo-placeholder {
+          width: 48px;
+          height: 48px;
+          color: #dc2626;
+        }
+
+        .teacher-details {
+          text-align: center;
+          width: 100%;
+        }
+
+        .teacher-name-card {
+          font-size: 0.95rem;
           font-weight: 700;
-          color: #991b1b;
-          line-height: 1;
+          color: #1f2937;
+          margin: 0 0 0.3rem 0;
+          line-height: 1.2;
+          text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
         }
 
-        /* Quality Cards Styles (kept as is) */
+        .teacher-designation-card {
+          font-size: 0.75rem;
+          font-weight: 600;
+          color: #dc2626;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+          margin: 0;
+          text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
+        }
+
+        /* Quality Cards */
         .quality-card {
-           padding: 2em;
-           color: #1f2937;
-           background-color: #ffffff;
-           border: 1px solid rgba(220, 38, 38, 0.1);
-           border-radius: 15px;
-           transition: all ease-in-out 0.3s;
+          padding: 2em;
+          color: #1f2937;
+          background-color: #ffffff;
+          border: 1px solid rgba(220, 38, 38, 0.1);
+          border-radius: 15px;
+          transition: all ease-in-out 0.3s;
         }
         
         .quality-number {
-           display: inline-flex;
-           align-items: center;
-           justify-content: center;
-           width: 3.5em;
-           height: 3.5em;
-           border-radius: 12px;
-           background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-           color: white;
-           font-size: 1.5em;
-           font-weight: 700;
-           margin-bottom: 1em;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 3.5em;
+          height: 3.5em;
+          border-radius: 12px;
+          background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+          color: white;
+          font-size: 1.5em;
+          font-weight: 700;
+          margin-bottom: 1em;
         }
 
         /* Responsive */
         @media (max-width: 640px) {
-          .visiting-card {
-            width: 300px;
-            height: 220px;
+          .teacher-business-card {
+            max-width: 320px;
+            height: 200px;
           }
-          .logo-container {
-             width: 70px;
-             height: 70px;
-             top: 20px;
+
+          .card-left-section {
+            padding: 1rem;
           }
-           .center-logo {
-             width: 55px;
-             height: 55px;
-           }
-           .sidebar-char {
-             font-size: 1.5rem;
-           }
+
+          .card-right-section {
+            width: 130px;
+            padding: 1rem 0.65rem;
+          }
+
+          .teacher-photo-circle {
+            width: 70px;
+            height: 70px;
+          }
+
+          .photo-placeholder {
+            width: 40px;
+            height: 40px;
+          }
+
+          .teacher-name-card {
+            font-size: 0.85rem;
+          }
+
+          .teacher-designation-card {
+            font-size: 0.7rem;
+          }
+
+          .icon-text {
+            font-size: 0.65rem;
+          }
+
+          .diagonal-cut {
+            width: 90px;
+          }
+
+          .logo-watermark-bg {
+            width: 150px;
+            height: 150px;
+            opacity: 0.08;
+          }
         }
       `}</style>
     </div>
